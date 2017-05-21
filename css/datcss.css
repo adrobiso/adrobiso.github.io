@@ -1,0 +1,149 @@
+@font-face
+{
+  font-family: 'Exo';
+  src: url('../fonts/exo/Exo-Light.otf');
+}
+
+@font-face
+{
+  font-family: 'Calibiri';
+  src: url('../fonts/calibri/calibri.ttf');
+}
+
+html
+{
+  height: 100%;
+}
+
+body
+{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url(../images/header.png), url('../images/background.png');
+  background-repeat: repeat-x, repeat;
+  background-color: #f8f8ff;
+  font-family: Calibiri, Verdana;
+  text-align: center;
+}
+
+a
+{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover
+{
+  color: #cc6600;
+}
+
+.wrapper
+{
+  margin-left:auto;
+  margin-right:auto;
+  height: 100%;
+  width: 1000px;
+}
+
+.nav
+{
+  height: 60px;
+  font-family: Exo, Verdana;
+}
+
+.nav p
+{
+   padding: 0;
+   margin: 0;
+}
+
+.nav #name
+{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 40%;
+  font-size: 2em;
+}
+
+.nav #links
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav li
+{
+  display: inline;
+  padding-left: 30px;
+  font-size: 1.25em;
+}
+
+.content
+{
+  font-family: Calibiri, Verdana;
+}
+
+.content h1, h2, h3, h4, h5, h6
+{
+  font-family: Exo, Verdana;
+}
+
+.content #banner
+{
+  font-size: 3em;
+  padding: 50px 0 50px 0;
+  margin-top: 50px;
+  font-family: Exo, Verdana;
+}
+
+.content #featured
+{
+  margin-top: 50px;
+}
+
+.content #featured #first
+{
+  vertical-align: top;
+  width: 300px;
+  display: inline-block;
+  margin-right: 200px;
+}
+
+.content #featured #second
+{
+  vertical-align: top;
+  width: 300px;
+  display: inline-block;
+}
+
+.content #list ul
+{
+  list-style-type: none;
+}
+
+.content #list li
+{
+  width: 300px;
+  display: inline-block;
+}
+
+.content #contact-info
+{
+  font-size: 1.5em;
+  font-family: Exo, Verdana;
+}
+
+.content #description
+{
+  width: 800px;
+  display: inline-block;
+  text-align: left;
+}
+
+.footer
+{
+  border-top: 1px solid #afafaf;
+  font-size: .9em;
+  margin: 50px;
+}

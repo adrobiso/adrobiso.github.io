@@ -1,7 +1,19 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html>
+---
+layout: default
+title: home
+---
+
+<div id="banner">
+   <p>Computer Engineer</p>
+</div>
+<div id="featured">
+   <h1>Featured Projects:</h1>
+   <div id="first">
+      <h2><a href="{{ site.posts[0].url }}">{{ site.posts[0].title }}</a></h2>
+      {{ site.posts[0].excerpt }}
+   </div>
+   <div id="second">
+      <h2><a href="{{ site.posts[1].url }}">{{ site.posts[1].title }}</a></h2>
+      {{ site.posts[1].excerpt }}
+   </div>
+</div>

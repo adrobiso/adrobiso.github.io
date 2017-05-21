@@ -1,0 +1,19 @@
+---
+layout: default
+title: projects
+---
+
+<div class="content">
+   <div id="banner">
+      <p>Project Listing</p>
+   </div>
+   <div id="list">
+      <ul>
+         {% for post in site.posts %}
+          <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+     </ul>
+   </div>
+</div>

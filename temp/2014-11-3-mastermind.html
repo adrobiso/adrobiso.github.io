@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alan Robison: Online Portfolio</title>
+    <link rel="stylesheet" href="datcss.css">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="nav">
+        <div id="name">
+          <a href="Home.html">Alan Robison</a>
+        </div>
+        <div id="links">
+          <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <div id="banner">
+          <p>Mastermind on a FPGA</p>
+        </div>
+        <div id="description">
+          <p>In my digital design class, which worked with an FPGA on a Diligent Nexys 2 
+            board, I chose to recreate the board game Mastermind as my final project. I 
+            changed the rules slightly to work around the fact that I only had binary 
+            input, but the core of the game is still the same.</p>
+          <p>The first change was that rather than picking four knobs of six different 
+            colors, the first player used eight switches to create the target 
+            combination. They would then press a button to save the combination, and 
+            put the switches in a random configuration. The second player would then put 
+            the switches into their first guess, and press a second button. This would 
+            update the seven-segment display, telling them how many switches were in the 
+            wrong state (but not which ones) as well as tell them how many attempts they 
+            had made. This would continue until they guessed the right combination.</p>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Website designed and developed by Alan Robison</p>
+      </div>
+    </div>
+  </body>
+</html>
