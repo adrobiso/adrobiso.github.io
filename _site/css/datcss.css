@@ -20,22 +20,24 @@ body
   height: 100%;
   margin: 0;
   padding: 0;
-  background: url(../images/header.png), url('../images/background.png');
+  background: url(../images/header2.png)/*, url('../images/background2.png')*/;
   background-repeat: repeat-x, repeat;
-  background-color: #f8f8ff;
+  background-color: #060511;
   font-family: Calibiri, Verdana;
   text-align: center;
+  color: lightgray;
 }
 
 a
 {
   text-decoration: none;
-  color: black;
+   color: #ffc36e;
 }
 
 a:hover
 {
-  color: #cc6600;
+  color: #ffb347;
+  /*color: #cc6600;*/
 }
 
 .wrapper
@@ -91,10 +93,16 @@ a:hover
 
 .content #banner
 {
-  font-size: 3em;
-  padding: 50px 0 50px 0;
-  margin-top: 50px;
+  font-size: 4em;
+  padding: 100px 0 50px 0;
+  margin-top: 10px;
   font-family: Exo, Verdana;
+}
+
+.content #sub-banner
+{
+  font-size: 0.75em;
+  color: gray;
 }
 
 .content #featured
