@@ -1,0 +1,94 @@
+html,
+body {
+   height: 100%;
+   margin: 0;
+   font-family: sans-serif;
+   background-color: #362419;
+   background-image: url("../media/img/darkwood.jpg");
+}
+
+.box {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+
+.content {
+   flex: 1 1 auto;
+   text-align: center;
+   color: white;
+}
+
+.practiceBox {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 100%;
+}
+
+.moveablesBox {
+   display: flex;
+   justify-content: space-around;
+   width: 50%;
+   height: 100px;
+   flex: 0 0 auto;
+}
+
+.moveablesBoxVertical {
+   display: flex;
+   flex-direction: column;
+   width: 100px;
+   height: 50%;
+}
+
+.moveable {
+   position: relative;
+   z-index: 1;
+   filter: drop-shadow(0.3rem 0.3rem 0.3rem rgba(0, 0, 20, 0.8));
+}
+
+.square {
+   height: 100px;
+   width: 100px;
+   text-align: right;
+}
+
+.target {
+   height: 150px;
+   width: 150px;
+   flex: 0 0 auto;
+   outline: 3px dashed whitesmoke;
+   z-index: 0;
+}
+
+#practiceLink {
+   float: right;
+   background-color: whitesmoke;
+}
+
+.feeder {
+   float: left;
+   display: flex;
+   flex-flow: column;
+   height: 100%;
+}
+
+.feeder .moveable {
+   visibility: hidden;
+}
+
+.recepticle {
+   float: right;
+   display: flex;
+   flex-direction: column;
+   width: 100px;
+   height: 200px;
+   outline: 2px dashed lightgray;
+   z-index: 0;
+}
+
+.spacer {
+   flex: 1 1 auto;
+   min-height: 10px;
+   max-height: 100px;
+}
