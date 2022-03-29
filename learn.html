@@ -2,34 +2,34 @@
 <html>
 
 <head>
-   <link rel="stylesheet" href="css/moveables.css">
+   <link rel="stylesheet" href="css/moveables.css?rnd=132">
    <script src="js/moveables.js"></script>
 </head>
 
 <body>
    <div class="box">
       <div class="header">
-         <button id="newItem" type="button" onclick="new_item()">New Item</button>
+         <button id="newItem" type="button" onclick="new_item(event)">New Item</button>
          <a id="practiceLink" href="practice.html">Practice</a>
       </div>
       <div class="spacer"></div>
       <div class="content"ondrop="drop(event)" ondragover="drag_over(event)">
-         <div class="feeder">
-            <div id="blue" class="moveable" onclick="audioFromEvent(event)" draggable="true"
+         <div id="feeder">
+            <div id="blue" class="moveable" onclick="play_audio_from_event(event)" draggable="true"
                ondragstart="drag_start(event)">
                <div class="square" style="background-color:blue">
                   <img src="media/img/speaker.png" alt="play audio" width="14px">
                   <audio id="blueAudio" src="media/audio/blue.mp3" type="audio/mpeg"></audio>
                </div>
             </div>
-            <div id="red" class="moveable" onclick="audioFromEvent(event)" draggable="true" ondragstart="drag_start(event)">
+            <div id="red" class="moveable" onclick="play_audio_from_event(event)" draggable="true" ondragstart="drag_start(event)">
                <div class="square" style="background-color:red">
                   <img src="media/img/speaker.png" alt="play audio" width="14px">
                   <audio id="redAudio" src="media/audio/red.mp3" type="audio/mpeg"></audio>
                </div>
             </div>
          </div>
-         <div class="recepticle" ondrop="reparentOnDrop(event)"></div>
+         <div class="recepticle" ondrop="recepticle_on_drop(event)"></div>
       </div>
    </div>
 </body>

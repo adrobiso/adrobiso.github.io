@@ -1,10 +1,20 @@
+let moveables;
+
+window.onload = init;
+
+function init() {
+   let red = {label:'red', audioElement:document.getElementById('redAudio')};
+   let blue = {label:'blue', audioElement:document.getElementById('blueAudio')};
+   moveables = new Map([[blue.label, blue],[red.label, red]]);
+}
+
 function drag_start(event) {
    setTimeout(function () {
-      event.target.style.visibility = "hidden";
+      event.target.style.visibility = 'hidden';
    }, 1);
    const style = window.getComputedStyle(event.target, null);
-   event.dataTransfer.setData("text/plain",
-      event.target.id + ',' + (parseInt(style.getPropertyValue("left"), 10) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top"), 10) - event.clientY));
+   event.dataTransfer.setData('text/plain',
+      event.target.id + ',' + (parseInt(style.getPropertyValue('left'), 10) - event.clientX) + ',' + (parseInt(style.getPropertyValue('top'), 10) - event.clientY));
 }
 
 function drag_over(event) {
@@ -12,11 +22,11 @@ function drag_over(event) {
 }
 
 function drop(event) {
-   const data = event.dataTransfer.getData("text/plain").split(',');
+   const data = event.dataTransfer.getData('text/plain').split(',');
    const offset = data.slice(1);
    const draggedElement = document.getElementById(data[0]);
    setTimeout(function () {
-      draggedElement.style.visibility = "visible";
+      draggedElement.style.visibility = 'visible';
    }, 1);
    draggedElement.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
    draggedElement.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
@@ -24,45 +34,53 @@ function drop(event) {
    return draggedElement;
 }
 
-function reparentOnDrop(event) {
+function reparent_on_drop(event) {
    const draggedElement = drop(event);
    event.currentTarget.appendChild(draggedElement);
    setTimeout(function () {
-      draggedElement.style.left = "0px";
-      draggedElement.style.top = "0px";
+      draggedElement.style.left = '0px';
+      draggedElement.style.top = '0px';
    }, 1);
 }
 
-function check_answer(event) {
-   const targets = document.getElementsByClassName("target");
-   const moveables = document.getElementsByClassName("moveable");
-   for (let target of targets) {
-      let targetAudio = document.getElementById(target.id + "Audio");
-      let answerId = targetAudio.src.slice(targetAudio.src.lastIndexOf('/') + 1, -4);
-      let answerMoveable = document.getElementById(answerId);
-      for (let moveable of moveables) {
-         if (isObjOnObj(moveable, target)) {
-            if (moveable == answerMoveable) {
-               moveable.style.outline = "2px dashed lightgreen";
-               document.getElementById("newQuestion").disabled = false;
-               event.target.disabled = true;
-            } else {
-               moveable.style.outline = "2px dashed red";
-            }
-         }
-         else {
-            moveable.style.outline = "none";
-         }
-      }
+function recepticle_on_drop(event) {
+   reparent_on_drop(event);
+   const newItemButton = document.getElementById("newItem");
+   const feeder = document.getElementById("feeder");
+   if (feeder.children.length > 0) {
+      newItemButton.disabled = false;
    }
+}
+
+function check_answer_event(event) {
+   const target = document.getElementById('target1');
+   if (check_answer(target)) {
+      event.currentTarget.disabled = true;
+   }
+}
+
+function check_answer(targetElement) {
+   let isCorrect = false;
+   const moveableElements = document.getElementsByClassName('moveable');
+   for (let moveableElement of moveableElements) {
+      if (isObjOnObj(moveableElement, targetElement)) {
+         if (moveableElement.id == targetElement.dataset.targetMoveable) {
+            moveableElement.style.outline = '2px dashed lightgreen';
+            document.getElementById('newQuestion').disabled = false;
+            isCorrect = true;
+         } else { moveableElement.style.outline = '2px dashed red'; }
+      }
+      else { moveableElement.style.outline = 'none'; }
+   }
+   return isCorrect;
 }
 
 function toggle_lock(event) {
    const parent = event.target.parentElement;
-   if (parent.getAttribute('draggable') == "true") {
-      parent.setAttribute('draggable', "false");
+   if (parent.getAttribute('draggable') == 'true') {
+      parent.setAttribute('draggable', 'false');
    } else {
-      parent.setAttribute('draggable', "true");
+      parent.setAttribute('draggable', 'true');
    }
 }
 
@@ -84,43 +102,45 @@ function isObjOnObj(a, b) {
 }
 
 function new_question(event) {
-   const moveables = document.getElementsByClassName("moveable");
-   for (let moveable of moveables) {
-      moveable.style.outline = "none";
-      moveable.style.position = "";
-      moveable.style.left = "initial";
-      moveable.style.top = "initial";
+   const moveableElements = document.getElementsByClassName('moveable');
+   for (let moveableElement of moveableElements) {
+      moveableElement.style.outline = 'none';
+      moveableElement.style.position = '';
+      moveableElement.style.left = 'initial';
+      moveableElement.style.top = 'initial';
    }
    setRandomTargets();
-   document.getElementById("checkAnswer").disabled = false;
+   document.getElementById('checkAnswer').disabled = false;
    event.target.disabled = true;
 }
 
 function setRandomTargets() {
-   const targets = document.getElementsByClassName("target");
-   const moveables = document.getElementsByClassName("moveable");
+   const targets = document.getElementsByClassName('target');
+   const moveableElements = document.getElementsByClassName('moveable');
 
    for (let target of targets) {
-      let index = Math.floor(Math.random() * moveables.length);
-
-      let targetAudio = document.getElementById(target.id + "Audio");
-      targetAudio.src = "media/audio/" + moveables[index].id + ".mp3";
-      targetAudio.play();
+      let index = Math.floor(Math.random() * moveableElements.length);
+      let moveableElement = moveableElements[index];
+      target.dataset.targetMoveable = moveableElement.id;
+      play_audio(moveableElement.id);
    }
 }
 
-function play_audio(element) {
-   document.getElementById(element.id + "Audio").play();
+function play_audio(moveableId) {
+   moveables.get(moveableId).audioElement.play();
 }
 
-function audioFromEvent(event) {
-   play_audio(event.currentTarget);
+function play_audio_from_event(event) {
+   play_audio(event.currentTarget.id);
 }
 
-function new_item() {
-   const feeders = document.getElementsByClassName("feeder");
-   for (let feeder of feeders) {
-      feeder.children[0].style.visibility = "visible";
-      play_audio(feeder.children[0]);
-   }
+function play_target_audio_from_event(event) {
+   play_audio(event.currentTarget.dataset.targetMoveable)
+}
+
+function new_item(event) {
+   const newItem = document.getElementById('feeder').children[0];
+   newItem.style.visibility = 'visible';
+   play_audio(newItem.id);
+   event.currentTarget.disabled = true;
 }

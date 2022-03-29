@@ -66,14 +66,14 @@ body {
    background-color: whitesmoke;
 }
 
-.feeder {
+#feeder {
    float: left;
    display: flex;
    flex-flow: column;
    height: 100%;
 }
 
-.feeder .moveable {
+#feeder .moveable {
    visibility: hidden;
 }
 
