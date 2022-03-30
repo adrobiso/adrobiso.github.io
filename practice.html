@@ -2,36 +2,25 @@
 <html>
 
 <head>
-   <link rel="stylesheet" href="css/moveables.css">
-   <script src="js/moveables.js"></script>
+   <link rel="stylesheet" href="css/moveables.css?rnd=132">
+   <script src="js/moveables.js" defer="true"></script>
 </head>
 
 <body>
    <div class="box">
       <div class="header">
          <form>
-            <button id="newQuestion" type="button" onclick="new_question(event)">New Question</button>
-            <button id="checkAnswer" type="button" onclick="check_answer_event(event)" disabled="true">Check Answer</button>
+            <button id="newQuestion" type="button" onclick="setNewQuestion(event)">New Question</button>
+            <button id="checkAnswer" type="button" onclick="checkAnswerEvent(event)" disabled="true">Check Answer</button>
          </form>
       </div>
-      <div class="content" ondrop="drop(event)" ondragover="drag_over(event)">
+      <div class="content" ondrop="drop(event)" ondragover="dragOver(event)">
          <div class="practiceBox">
-            <div id="target1" class="target" data-target-moveable="blue" onclick="play_target_audio_from_event(event)">
+            <div id="target1" class="target" onclick="playTargetAudio(event)">
                <img src="media/img/speaker.png" alt="play audio" width="30px">
             </div>
             <div class="spacer"></div>
-            <div class="moveablesBox">
-               <div id="blue" class="moveable" draggable="true" ondragstart="drag_start(event)">
-                  <div class="square" style="background-color:blue">
-                     <audio id="blueAudio" src="media/audio/blue.mp3" type="audio/mpeg"></audio>
-                  </div>
-               </div>
-               <div id="red" class="moveable" draggable="true" ondragstart="drag_start(event)">
-                  <div class="square" style="background-color:red">
-                     <audio id="redAudio" src="media/audio/red.mp3" type="audio/mpeg"></audio>
-                  </div>
-               </div>
-            </div>
+            <div id="moveablesBox" class="moveablesBox"></div>
          </div>
       </div>
    </div>

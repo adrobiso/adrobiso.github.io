@@ -1,0 +1,7 @@
+{
+   "colors":[
+      {"label": "blue", "imgSrc":"", "audioSrc":"media/audio/blue.mp3"},
+      {"label": "red", "imgSrc":"", "audioSrc":"media/audio/red.mp3"},
+      {"label": "grey", "imgSrc":"", "audioSrc":"media/audio/grey.mp3"}
+   ]
+}
