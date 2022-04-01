@@ -2,17 +2,16 @@
 <html>
 
 <head>
-   <link rel="stylesheet" href="css/moveables.css?rnd=132">
+   <link rel="stylesheet" href="css/moveables.css">
    <script src="js/moveables.js" defer="true"></script>
 </head>
 
 <body>
    <div class="box">
       <div class="header">
-         <form>
-            <button id="newQuestion" type="button" onclick="setNewQuestion(event)">New Question</button>
-            <button id="checkAnswer" type="button" onclick="checkAnswerEvent(event)" disabled="true">Check Answer</button>
-         </form>
+         <select id="categorySelect" oninput="changeCategory(event)"></select>
+         <button id="newQuestion" type="button" onclick="setNewQuestion(event)">New Question</button>
+         <button id="checkAnswer" type="button" onclick="checkAnswerEvent(event)" disabled="true">Check Answer</button>
       </div>
       <div class="content" ondrop="drop(event)" ondragover="dragOver(event)">
          <div class="practiceBox">
