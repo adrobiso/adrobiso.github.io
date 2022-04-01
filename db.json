@@ -1,7 +1,7 @@
 {
    "colors":[
-      {"label": "blue", "imgSrc":"", "audioSrc":"media/audio/blue.mp3"},
-      {"label": "red", "imgSrc":"", "audioSrc":"media/audio/red.mp3"},
-      {"label": "grey", "imgSrc":"", "audioSrc":"media/audio/grey.mp3"}
+      {"label": "blue", "imgSrc":"media/img/blue.svg", "audioSrc":"media/audio/blue.mp3"},
+      {"label": "red", "imgSrc":"media/img/red.svg", "audioSrc":"media/audio/red.mp3"},
+      {"label": "grey", "imgSrc":"media/img/grey.svg", "audioSrc":"media/audio/grey.mp3"}
    ]
 }

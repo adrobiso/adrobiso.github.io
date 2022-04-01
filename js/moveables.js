@@ -1,5 +1,5 @@
 const moveables = new Map();
-const target = { id: 'target1', targetMoveable: '' };
+const target = { id: 'target1', targetedMoveableId: '' };
 
 fetch('db.json')
   .then(response => { return response.json(); })
@@ -19,10 +19,11 @@ function createMoveableElement(data, parent) {
   element.className = 'moveable';
   element.draggable = true;
   element.addEventListener('dragstart', dragStart);
-  const square = document.createElement('div');
-  square.className = 'square';
-  square.style.backgroundColor = data.label;
-  element.appendChild(square);
+  const image = document.createElement('img');
+  image.src = data.imgSrc;
+  image.width = 100;
+  image.height = 100;
+  element.appendChild(image);
   const audio = document.createElement('audio');
   audio.id = data.label + 'Audio';
   audio.src = data.audioSrc;
@@ -33,12 +34,13 @@ function createMoveableElement(data, parent) {
 }
 
 function dragStart(event) {
+  const target = event.currentTarget;
   setTimeout(function () {
-    event.target.style.visibility = 'hidden';
+    target.style.visibility = 'hidden';
   }, 1);
-  const style = window.getComputedStyle(event.target, null);
+  const style = window.getComputedStyle(target, null);
   event.dataTransfer.setData('text/plain',
-    event.target.id + ',' + (parseInt(style.getPropertyValue('left'), 10) - event.clientX) + ',' + (parseInt(style.getPropertyValue('top'), 10) - event.clientY));
+    target.id + ',' + (parseInt(style.getPropertyValue('left'), 10) - event.clientX) + ',' + (parseInt(style.getPropertyValue('top'), 10) - event.clientY));
 }
 
 function dragOver(event) {
@@ -78,22 +80,22 @@ function drop(event) {
 
 function checkAnswerEvent(event) {
   if (checkAnswer()) {
+    const targetMoveable = document.getElementById(target.targetedMoveableId)
+    targetMoveable.style.outline = '2px dashed lightgreen';
+    document.getElementById('newQuestion').disabled = false;
     event.currentTarget.disabled = true;
   }
 }
 
 function checkAnswer() {
-  let isCorrect = false;
+  let isCorrect = true;
+  const targetElement = document.getElementById(target.id)
   const moveableElements = document.getElementsByClassName('moveable');
   for (let moveableElement of moveableElements) {
-    if (isObjOnObj(moveableElement, target)) {
-      if (moveableElement.id === target.targetMoveable) {
-        moveableElement.style.outline = '2px dashed lightgreen';
-        document.getElementById('newQuestion').disabled = false;
-        isCorrect = true;
-      } else { moveableElement.style.outline = '2px dashed red'; }
+    if (isObjOnObj(moveableElement, targetElement)) {
+      // boolean operation restricts to only the target moveable
+      isCorrect &= moveableElement.id === target.targetedMoveableId;
     }
-    else { moveableElement.style.outline = 'none'; }
   }
   return isCorrect;
 }
@@ -144,7 +146,7 @@ function resetMoveables() {
 function setRandomTarget() {
   let randomIndex = Math.floor(Math.random() * moveables.size);
   let moveableId = Array.from(moveables.values())[randomIndex].htmlElement.id;
-  target.targetMoveable = moveableId;
+  target.targetedMoveableId = moveableId;
   playAudio(moveableId);
 }
 
@@ -159,7 +161,7 @@ function playAudio(moveableId) {
 // }
 
 function playTargetAudio() {
-  playAudio(target.targetMoveable)
+  playAudio(target.targetedMoveableId)
 }
 
 function newItem(event) {
