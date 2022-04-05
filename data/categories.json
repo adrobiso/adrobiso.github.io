@@ -1,18 +1,47 @@
 {
    "colors": {
-      "iconSrc": "media/img/blue.svg",
+      "iconSrc": "media/img/Color_circle_(RGB).svg",
       "words": [
          "blue",
          "red",
-         "grey"
+         "grey",
+         "black",
+         "white",
+         "yellow",
+         "purple",
+         "green",
+         "orange",
+         "pink"
       ]
    },
-   "colors2": {
-      "iconSrc": "media/img/grey.svg",
+   "countries": {
+      "iconSrc": "media/img/Flag-map_of_the_world_(2017).png",
       "words": [
-         "grey",
-         "blue",
-         "red"
+         "america",
+         "japan",
+         "australia",
+         "unitedKingdom",
+         "southAfrica",
+         "newZealand",
+         "korea",
+         "india",
+         "china",
+         "germany"
+      ]
+   },
+   "numbers": {
+      "iconSrc": "media/img/numbers.svg",
+      "words": [
+         "one",
+         "two",
+         "three",
+         "four",
+         "five",
+         "six",
+         "seven",
+         "eight",
+         "nine",
+         "ten"
       ]
    }
 }

@@ -13,8 +13,7 @@ function createCategoryElements(categories) {
     linkElement.href = "practice.html?category=" + category;
     const imageElement = document.createElement('img');
     imageElement.src = categories[category].iconSrc;
-    imageElement.width = 100;
-    imageElement.height = 100;
+    imageElement.classList.add('categoryImage');
     linkElement.appendChild(imageElement);
     categoryBox.appendChild(linkElement);
   }

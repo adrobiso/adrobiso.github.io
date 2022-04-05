@@ -1,5 +1,6 @@
 html,
 body {
+   margin: 0;
    height: 100%;
    font-family: sans-serif;
    background-color: #362419;
@@ -9,10 +10,12 @@ body {
 .categoryBox {
    display: flex;
    flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
 }
 
 .categoryBox > a {
-   margin: 10px
+   margin: 20px
 }
 
 .verticalBox {
@@ -38,7 +41,15 @@ body {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
+   align-items: center;
    width: 90%;
+}
+
+.moveablesBox > div {
+   margin-left: 20px;
+   margin-right: 20px;
+   margin-top: 10px;
+   margin-bottom: 10px;
 }
 
 .moveable {
@@ -52,10 +63,63 @@ body {
    width: 150px;
    outline: 3px dashed whitesmoke;
    z-index: 0;
+   visibility: hidden;
 }
 
 .spacer {
    flex: 1 1 auto;
    min-height: 10px;
    max-height: 100px;
+}
+
+/* .card {
+   display: flex;
+   justify-content: center;
+   width: 100px;
+   height: 100px;
+} */
+
+.cardImage {
+   max-width: 100px;
+   max-height: 100px;
+   width: 100px;
+   height: auto;
+}
+
+.categoryImage {
+   max-width: 150px;
+   max-height: 150px;
+   width: 150px;
+   height: auto;
+}
+
+#newQuestion {
+   position:absolute;
+   right: 10px;
+   top: 10px;
+}
+
+#newQuestion > img {
+   width: 80px;
+   height: auto;
+}
+
+#newQuestion:disabled > img {
+   opacity: 0.3;
+}
+
+#checkAnswer {
+   position:absolute;
+   height: 90px;
+   left: 10px;
+   top: 10px;
+}
+
+#checkAnswer > img {
+   width: 80px;
+   height: auto;
+}
+
+#checkAnswer:disabled > img {
+   opacity: 0.3;
 }

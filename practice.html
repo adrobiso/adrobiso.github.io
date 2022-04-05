@@ -8,11 +8,13 @@
 </head>
 
 <body>
+   <button id="newQuestion" type="button" onclick="setNewQuestion(event)">
+      <img src="media/img/next.png" alt="New Question">
+   </button>
+   <button id="checkAnswer" type="button" onclick="checkAnswerEvent(event)" disabled="true">
+      <img src="media/img/yesno.png" alt="Check Answer">
+   </button>
    <div class="verticalBox">
-      <div class="header">
-         <button id="newQuestion" type="button" onclick="setNewQuestion(event)">New Question</button>
-         <button id="checkAnswer" type="button" onclick="checkAnswerEvent(event)" disabled="true">Check Answer</button>
-      </div>
       <div class="content" ondrop="drop(event)" ondragover="dragOver(event)">
          <div class="practiceBox">
             <div class="spacer"></div>

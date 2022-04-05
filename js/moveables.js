@@ -15,6 +15,7 @@ function init(jsonData) {
 
   if (categories.hasOwnProperty(category)) {
     createMoveables(jsonData[0], categories, category, moveablesBox);
+    shuffleChildren(moveablesBox);
   } else {
     document.getElementById('newQuestion').disabled = true;
   }
@@ -38,16 +39,30 @@ function createMoveables(words, categories, category, parentElement) {
   }
 }
 
+function shuffleChildren(element) {
+  for (let child of shuffle(element.children)) {
+    element.appendChild(child);
+  }
+}
+
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 function createMoveableElement(data, parent) {
   const element = document.createElement('div');
   element.id = data.label;
-  element.className = 'moveable';
+  element.classList.add('moveable');
+  // element.classList.add('card');
   element.draggable = true;
   element.addEventListener('dragstart', dragStart);
   const image = document.createElement('img');
   image.src = data.imgSrc;
-  image.width = 100;
-  image.height = 100;
+  image.classList.add('cardImage');
   element.appendChild(image);
   const audio = document.createElement('audio');
   audio.id = data.label + 'Audio';
@@ -60,25 +75,29 @@ function createMoveableElement(data, parent) {
 
 function checkAnswerEvent(event) {
   if (checkAnswer(question)) {
-    question.answerElement.style.outline = '2px dashed lightgreen';
     document.getElementById('newQuestion').disabled = false;
     event.currentTarget.disabled = true;
   }
 }
 
 function checkAnswer(question) {
-  let isAnswerOverlapping = false;
-  let isOtherOverlapping = false;
+  const overlappingMoveables = [];
   for (let moveable of moveables.values()) {
     if (isObjOnObj(moveable.htmlElement, question.htmlElement)) {
-      if (moveable.htmlElement.id === question.answerElement.id) {
-        isAnswerOverlapping = true;
-      } else {
-        isOtherOverlapping = true;
-      }
+      overlappingMoveables.push(moveable);
     }
   }
-  return isAnswerOverlapping === true && isOtherOverlapping === false;
+  if (overlappingMoveables.length === 1) {
+    const moveable = overlappingMoveables[0];
+    if (moveable.htmlElement.id === question.answerElement.id) {
+      moveable.htmlElement.style.outline = '2px dashed lightgreen';
+      return true;
+    } else {
+      moveable.htmlElement.style.outline = '2px dashed red';
+      return false;
+    }
+  }
+  else { return false; }
 }
 
 // function toggleLock(event) {
@@ -112,8 +131,10 @@ function setNewQuestion(event) {
 
   resetMoveables();
   setRandomAnswer();
+  shuffleChildren(document.getElementById('moveablesBox'));
   document.getElementById('checkAnswer').disabled = false;
-  event.target.disabled = true;
+  document.getElementById('target1').style.visibility = "visible";
+  event.currentTarget.disabled = true;
 }
 
 function reset() {

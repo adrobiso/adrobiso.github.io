@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 3">
+   <style>
+      .centered { 
+         dominant-baseline: central; 
+         text-anchor: middle;
+         font-family: sans-serif; }
+   </style>
+   <rect width="3" height="3" fill="#fff"/>
+   <text x="25%" y ="50%" class="centered" font-size="1px" fill="red">1</text>
+   <text x="50%" y ="50%" class="centered" font-size="1px" fill="blue">2</text>
+   <text x="75%" y ="50%" class="centered" font-size="1px" fill="green">3</text>
+</svg>
