@@ -3,18 +3,19 @@
 
 <head>
    <link rel="stylesheet" href="css/moveables.css">
+   <script src="js/dragndrop.js"></script>
    <script src="js/moveables.js" defer="true"></script>
 </head>
 
 <body>
-   <div class="box">
+   <div class="verticalBox">
       <div class="header">
-         <select id="categorySelect" oninput="changeCategory(event)"></select>
          <button id="newQuestion" type="button" onclick="setNewQuestion(event)">New Question</button>
          <button id="checkAnswer" type="button" onclick="checkAnswerEvent(event)" disabled="true">Check Answer</button>
       </div>
       <div class="content" ondrop="drop(event)" ondragover="dragOver(event)">
          <div class="practiceBox">
+            <div class="spacer"></div>
             <div id="target1" class="target" onclick="playTargetAudio(event)">
                <img src="media/img/speaker.png" alt="play audio" width="30px">
             </div>

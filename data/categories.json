@@ -1,0 +1,18 @@
+{
+   "colors": {
+      "iconSrc": "media/img/blue.svg",
+      "words": [
+         "blue",
+         "red",
+         "grey"
+      ]
+   },
+   "colors2": {
+      "iconSrc": "media/img/grey.svg",
+      "words": [
+         "grey",
+         "blue",
+         "red"
+      ]
+   }
+}
