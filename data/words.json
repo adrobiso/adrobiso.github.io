@@ -1,162 +1,212 @@
 {
    "blue": {
       "label": "blue",
-      "imgSrc": "media/img/blue.svg",
-      "audioSrc": "media/audio/blue.mp3"
+      "imgSrc": "./media/img/blue.svg",
+      "audioSrc": "./media/audio/blue.mp3"
    },
    "red": {
       "label": "red",
-      "imgSrc": "media/img/red.svg",
-      "audioSrc": "media/audio/red.mp3"
+      "imgSrc": "./media/img/red.svg",
+      "audioSrc": "./media/audio/red.mp3"
    },
    "grey": {
       "label": "grey",
-      "imgSrc": "media/img/grey.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/grey.svg",
+      "audioSrc": "./media/audio/grey.mp3"
    },
    "pink": {
       "label": "pink",
-      "imgSrc": "media/img/pink.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/pink.svg",
+      "audioSrc": "./media/audio/pink.mp3"
    },
    "green": {
       "label": "green",
-      "imgSrc": "media/img/green.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/green.svg",
+      "audioSrc": "./media/audio/green.mp3"
    },
    "purple": {
       "label": "purple",
-      "imgSrc": "media/img/purple.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/purple.svg",
+      "audioSrc": "./media/audio/purple.mp3"
    },
    "yellow": {
       "label": "yellow",
-      "imgSrc": "media/img/yellow.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/yellow.svg",
+      "audioSrc": "./media/audio/yellow.mp3"
    },
    "orange": {
       "label": "orange",
-      "imgSrc": "media/img/orange.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/orange.svg",
+      "audioSrc": "./media/audio/orange.mp3"
    },
    "black": {
       "label": "black",
-      "imgSrc": "media/img/black.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/black.svg",
+      "audioSrc": "./media/audio/black.mp3"
    },
    "white": {
       "label": "white",
-      "imgSrc": "media/img/white.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/white.svg",
+      "audioSrc": "./media/audio/white.mp3"
    },
    "america": {
       "label": "America",
-      "imgSrc": "media/img/Flag_of_the_United_States.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/Flag_of_the_United_States.svg",
+      "audioSrc": "./media/audio/america.mp3"
    },
    "japan": {
       "label": "Japan",
-      "imgSrc": "media/img/Flag_of_Japan.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/Flag_of_Japan.svg",
+      "audioSrc": "./media/audio/japan.mp3"
    },
    "australia": {
       "label": "Australia",
-      "imgSrc": "media/img/Flag_of_Australia.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/Flag_of_Australia.svg",
+      "audioSrc": "./media/audio/australia.mp3"
    },
-   "unitedKingdom": {
-      "label": "United Kingdom",
-      "imgSrc": "media/img/Flag_of_the_United_Kingdom.svg",
-      "audioSrc": "media/audio/grey.mp3"
+   "theUnitedKingdom": {
+      "label": "the United Kingdom",
+      "imgSrc": "./media/img/Flag_of_the_United_Kingdom.svg",
+      "audioSrc": "./media/audio/theUnitedKingdom.mp3"
    },
    "theUK": {
       "label": "the U.K.",
-      "imgSrc": "media/img/Flag_of_the_United_Kingdom.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/Flag_of_the_United_Kingdom.svg",
+      "audioSrc": "./media/audio/theUK.mp3"
    },
    "southAfrica": {
       "label": "South Africa",
-      "imgSrc": "media/img/Flag_of_South_Africa.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/Flag_of_South_Africa.svg",
+      "audioSrc": "./media/audio/southAfrica.mp3"
    },
    "newZealand": {
       "label": "New Zealand",
-      "imgSrc": "media/img/Flag_of_New_Zealand.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/Flag_of_New_Zealand.svg",
+      "audioSrc": "./media/audio/newZealand.mp3"
    },
    "southKorea": {
       "label": "South Korea",
-      "imgSrc": "media/img/Flag_of_South_Korea.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/Flag_of_South_Korea.svg",
+      "audioSrc": "./media/audio/southKorea.mp3"
    },
    "korea": {
       "label": "Korea",
-      "imgSrc": "media/img/Flag_of_South_Korea.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/Flag_of_South_Korea.svg",
+      "audioSrc": "./media/audio/korea.mp3"
    },
    "india": {
       "label": "India",
-      "imgSrc": "media/img/Flag_of_India.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/Flag_of_India.svg",
+      "audioSrc": "./media/audio/india.mp3"
    },
    "china": {
       "label": "China",
-      "imgSrc": "media/img/Flag_of_the_People's_Republic_of_China.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/Flag_of_the_People's_Republic_of_China.svg",
+      "audioSrc": "./media/audio/china.mp3"
    },
    "germany": {
       "label": "Germany",
-      "imgSrc": "media/img/Flag_of_Germany.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/Flag_of_Germany.svg",
+      "audioSrc": "./media/audio/germany.mp3"
    },
    "one": {
       "label": "one",
-      "imgSrc": "media/img/one.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/one.svg",
+      "audioSrc": "./media/audio/one.mp3"
    },
    "two": {
       "label": "two",
-      "imgSrc": "media/img/two.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/two.svg",
+      "audioSrc": "./media/audio/two.mp3"
    },
    "three": {
       "label": "three",
-      "imgSrc": "media/img/three.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/three.svg",
+      "audioSrc": "./media/audio/three.mp3"
    },
    "four": {
       "label": "four",
-      "imgSrc": "media/img/four.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/four.svg",
+      "audioSrc": "./media/audio/four.mp3"
    },
    "five": {
       "label": "five",
-      "imgSrc": "media/img/five.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/five.svg",
+      "audioSrc": "./media/audio/five.mp3"
    },
    "six": {
       "label": "six",
-      "imgSrc": "media/img/six.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/six.svg",
+      "audioSrc": "./media/audio/six.mp3"
    },
    "seven": {
       "label": "seven",
-      "imgSrc": "media/img/seven.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/seven.svg",
+      "audioSrc": "./media/audio/seven.mp3"
    },
    "eight": {
       "label": "eight",
-      "imgSrc": "media/img/eight.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/eight.svg",
+      "audioSrc": "./media/audio/eight.mp3"
    },
    "nine": {
       "label": "nine",
-      "imgSrc": "media/img/nine.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/nine.svg",
+      "audioSrc": "./media/audio/nine.mp3"
    },
    "ten": {
       "label": "ten",
-      "imgSrc": "media/img/ten.svg",
-      "audioSrc": "media/audio/grey.mp3"
+      "imgSrc": "./media/img/ten.svg",
+      "audioSrc": "./media/audio/ten.mp3"
+   },
+   "happy": {
+      "label": "happy",
+      "imgSrc": "./media/img/happy.png",
+      "audioSrc": "./media/audio/happy.mp3"
+   },
+   "nervous": {
+      "label": "nervous",
+      "imgSrc": "./media/img/nervous.png",
+      "audioSrc": "./media/audio/nervous.mp3"
+   },
+   "sleepy": {
+      "label": "sleepy",
+      "imgSrc": "./media/img/sleepy.png",
+      "audioSrc": "./media/audio/sleepy.mp3"
+   },
+   "tired": {
+      "label": "tired",
+      "imgSrc": "./media/img/tired.png",
+      "audioSrc": "./media/audio/tired.mp3"
+   },
+   "thirsty": {
+      "label": "thirsty",
+      "imgSrc": "./media/img/thirsty.png",
+      "audioSrc": "./media/audio/thirsty.mp3"
+   },
+   "hungry": {
+      "label": "hungry",
+      "imgSrc": "./media/img/hungry.png",
+      "audioSrc": "./media/audio/hungry.mp3"
+   },
+   "sad": {
+      "label": "sad",
+      "imgSrc": "./media/img/sad.png",
+      "audioSrc": "./media/audio/sad.mp3"
+   },
+   "angry": {
+      "label": "angry",
+      "imgSrc": "./media/img/angry.png",
+      "audioSrc": "./media/audio/angry.mp3"
+   },
+   "sick": {
+      "label": "sick",
+      "imgSrc": "./media/img/sick.png",
+      "audioSrc": "./media/audio/sick.mp3"
+   },
+   "hurt": {
+      "label": "hurt",
+      "imgSrc": "./media/img/hurt.png",
+      "audioSrc": "./media/audio/hurt.mp3"
    }
 }

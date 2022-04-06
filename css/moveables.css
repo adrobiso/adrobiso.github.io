@@ -4,7 +4,7 @@ body {
    height: 100%;
    font-family: sans-serif;
    background-color: #362419;
-   background-image: url("../media/img/darkwood.jpg");
+   background-image: url(".././media/img/darkwood.jpg");
 }
 
 .categoryBox {
@@ -95,6 +95,9 @@ body {
 
 #newQuestion {
    position:absolute;
+   background-color: lightgreen;
+   border-color: rgb(178, 236, 178);
+   border-radius: 6px;
    right: 10px;
    top: 10px;
 }
@@ -104,8 +107,8 @@ body {
    height: auto;
 }
 
-#newQuestion:disabled > img {
-   opacity: 0.3;
+#newQuestion:disabled  {
+   opacity: 0.5;
 }
 
 #checkAnswer {

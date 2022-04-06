@@ -67,6 +67,7 @@ function createMoveableElement(data, parent) {
   const audio = document.createElement('audio');
   audio.id = data.label + 'Audio';
   audio.src = data.audioSrc;
+  audio.volume = 0.5;
   element.appendChild(audio);
   parent.appendChild(element);
 

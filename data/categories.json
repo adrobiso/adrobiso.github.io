@@ -1,6 +1,6 @@
 {
    "colors": {
-      "iconSrc": "media/img/Color_circle_(RGB).svg",
+      "iconSrc": "./media/img/Color_circle_(RGB).svg",
       "words": [
          "blue",
          "red",
@@ -15,12 +15,12 @@
       ]
    },
    "countries": {
-      "iconSrc": "media/img/Flag-map_of_the_world_(2017).png",
+      "iconSrc": "./media/img/Flag-map_of_the_world_(2017).png",
       "words": [
          "america",
          "japan",
          "australia",
-         "unitedKingdom",
+         "theUK",
          "southAfrica",
          "newZealand",
          "korea",
@@ -30,7 +30,7 @@
       ]
    },
    "numbers": {
-      "iconSrc": "media/img/numbers.svg",
+      "iconSrc": "./media/img/numbers.svg",
       "words": [
          "one",
          "two",
@@ -42,6 +42,21 @@
          "eight",
          "nine",
          "ten"
+      ]
+   },
+   "feelings": {
+      "iconSrc": "./media/img/feelings.jpg",
+      "words": [
+         "happy",
+         "sad",
+         "angry",
+         "hungry",
+         "thirsty",
+         "sleepy",
+         "tired",
+         "nervous",
+         "sick",
+         "hurt"
       ]
    }
 }
