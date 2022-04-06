@@ -43,7 +43,6 @@ function testMove(event) {
 }
 
 function testCancel(event) {
-  console.log("cancelled");
   testDrop(event);
 }
 

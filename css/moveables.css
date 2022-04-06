@@ -28,6 +28,7 @@ body {
    flex: 1 1 auto;
    text-align: center;
    color: white;
+   touch-action: manipulation;
 }
 
 .practiceBox {
