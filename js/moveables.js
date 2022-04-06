@@ -40,8 +40,9 @@ function createMoveables(words, categories, category, parentElement) {
 }
 
 function shuffleChildren(element) {
-  for (let child of shuffle(element.children)) {
-    element.appendChild(child);
+  const newOrder = shuffle(Array.from(Array(element.children.length).keys()))
+  for (let i = 0; i < element.children.length; i++) {
+    element.children[i].style.order = newOrder[i];
   }
 }
 
@@ -57,9 +58,8 @@ function createMoveableElement(data, parent) {
   const element = document.createElement('div');
   element.id = data.label;
   element.classList.add('moveable');
-  // element.classList.add('card');
-  element.draggable = true;
-  element.addEventListener('dragstart', dragStart);
+  element.onpointerdown = testPickup;
+  element.onpointercancel = testDrop;
   const image = document.createElement('img');
   image.src = data.imgSrc;
   image.classList.add('cardImage');

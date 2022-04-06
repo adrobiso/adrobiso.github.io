@@ -15,7 +15,7 @@
       <img src="./media/img/yesno.png" alt="Check Answer">
    </button>
    <div class="verticalBox">
-      <div class="content" ondrop="drop(event)" ondragover="dragOver(event)">
+      <div class="content" onpointermove="testMove(event)" onpointerup="testDrop(event)">  <!-- ondrop="drop(event)" ondragover="dragOver(event)"> -->
          <div class="practiceBox">
             <div class="spacer"></div>
             <div id="target1" class="target" onclick="playTargetAudio(event)">
