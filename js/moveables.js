@@ -59,7 +59,7 @@ function createMoveableElement(data, parent) {
   element.id = data.label;
   element.classList.add('moveable');
   element.onpointerdown = testPickup;
-  element.onpointercancel = testDrop;
+  element.onpointercancel = testCancel;
   const image = document.createElement('img');
   image.src = data.imgSrc;
   image.classList.add('cardImage');
