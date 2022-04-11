@@ -128,12 +128,15 @@ body {
    opacity: 0.3;
 }
 
-#backLink > img {
+#backLink {
    position: absolute;
-   width: 80px;
-   height: auto;
    left: 10px;
    bottom: 10px;
+}
+
+#backLink > img {
+   width: 80px;
+   height: auto;
 }
 
 #score {
