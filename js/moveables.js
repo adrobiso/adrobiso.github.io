@@ -1,5 +1,8 @@
 const moveables = new Map();
-const question = { htmlElement: null, answerElement: null };
+const questionElement = { htmlElement: null, answerElement: null };
+const correctAnswers = [];
+let questionOrder;
+let questionSelectionWeights;
 
 Promise.all([
   fetch('data/words.json')
@@ -20,15 +23,15 @@ function init(jsonData) {
     document.getElementById('newQuestion').disabled = true;
   }
 
-  question.htmlElement = document.getElementById('target1');
-}
+  questionElement.htmlElement = document.getElementById('target1');
 
-// function clearMoveables() {
-//   for (let moveable of moveables.values()) {
-//     moveable.htmlElement.remove();
-//   }
-//   moveables.clear();
-// }
+  document.getElementById('score').innerHTML = '0/' + moveables.size;
+
+  questionSelectionWeights = Array(moveables.size).fill().map((_, i) => (0.4 * ((moveables.size - 1 - i) / (moveables.size - 1))) + 1);
+
+  questionOrder = Array.from(moveables.values()).map((moveable) => ({ answer: moveable.htmlElement }));
+  shuffle(questionOrder);
+}
 
 function createMoveables(words, categories, category, parentElement) {
   if (categories.hasOwnProperty(category) === false) { return; }
@@ -48,8 +51,8 @@ function shuffleChildren(element) {
 
 function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
 }
@@ -58,8 +61,8 @@ function createMoveableElement(data, parent) {
   const element = document.createElement('div');
   element.id = data.label;
   element.classList.add('moveable');
-  element.onpointerdown = testPickup;
-  element.onpointercancel = testCancel;
+  element.onpointerdown = startDrag;
+  element.onpointercancel = cancelDrag;
   const image = document.createElement('img');
   image.src = data.imgSrc;
   image.classList.add('cardImage');
@@ -75,22 +78,37 @@ function createMoveableElement(data, parent) {
 }
 
 function checkAnswerEvent(event) {
-  if (checkAnswer(question)) {
+  const isCorrect = checkAnswer(questionElement);
+  if (isCorrect) {
     document.getElementById('newQuestion').disabled = false;
     event.currentTarget.disabled = true;
   }
+
+  const question = questionOrder[questionOrder.length - 1];
+  if (question.hasOwnProperty("wasCorrect") === false) {
+    question.wasCorrect = isCorrect;
+    if (isCorrect) {
+      if (correctAnswers.includes(question.answer) === false) {
+        correctAnswers.push(question.answer);
+      }
+    } else {
+      correctAnswers.length = 0;
+    }
+    const scoreElement = document.getElementById('score');
+    scoreElement.innerHTML = correctAnswers.length + '/' + moveables.size;
+  }
 }
 
-function checkAnswer(question) {
+function checkAnswer(questionElement) {
   const overlappingMoveables = [];
   for (let moveable of moveables.values()) {
-    if (isObjOnObj(moveable.htmlElement, question.htmlElement)) {
+    if (elementsAreOverlapping(moveable.htmlElement, questionElement.htmlElement)) {
       overlappingMoveables.push(moveable);
     }
   }
   if (overlappingMoveables.length === 1) {
     const moveable = overlappingMoveables[0];
-    if (moveable.htmlElement.id === question.answerElement.id) {
+    if (moveable.htmlElement.id === questionElement.answerElement.id) {
       moveable.htmlElement.style.outline = '2px dashed lightgreen';
       return true;
     } else {
@@ -101,16 +119,7 @@ function checkAnswer(question) {
   else { return false; }
 }
 
-// function toggleLock(event) {
-//   const parent = event.target.parentElement;
-//   if (parent.getAttribute('draggable') === 'true') {
-//     parent.setAttribute('draggable', 'false');
-//   } else {
-//     parent.setAttribute('draggable', 'true');
-//   }
-// }
-
-function isObjOnObj(a, b) {
+function elementsAreOverlapping(a, b) {
   const al = a.offsetLeft;
   const ar = a.offsetLeft + a.offsetWidth;
   const bl = b.offsetLeft;
@@ -140,7 +149,7 @@ function setNewQuestion(event) {
 
 function reset() {
   resetMoveables();
-  question.answerElement = null;
+  questionElement.answerElement = null;
   document.getElementById('newQuestion').disabled = false;
   document.getElementById('checkAnswer').disabled = true;
 }
@@ -155,9 +164,25 @@ function resetMoveables() {
 }
 
 function setRandomAnswer() {
-  const randomIndex = Math.floor(Math.random() * moveables.size);
-  question.answerElement = Array.from(moveables.values())[randomIndex].htmlElement;
-  playMoveableAudio(question.answerElement);
+  let maxValue = -1;
+  let selectedIndex = 0;
+  for (let i = 0; i < questionSelectionWeights.length; i++) {
+    const value = questionSelectionWeights[i] * Math.random();
+    if (value > maxValue) {
+      selectedIndex = i;
+      maxValue = value;
+    }
+  }
+
+  const questionAnswerOrder = questionOrder.map(question => question.answer);
+  questionElement.answerElement = questionAnswerOrder[selectedIndex];
+  playMoveableAudio(questionElement.answerElement);
+
+  if (questionAnswerOrder.includes(questionElement.answerElement)) {
+    const currentIndex = questionAnswerOrder.indexOf(questionElement.answerElement);
+    questionOrder.splice(currentIndex, 1);
+  }
+  questionOrder.push({ answer: questionElement.answerElement });
 }
 
 function playMoveableAudio(moveableElement) {
@@ -166,12 +191,8 @@ function playMoveableAudio(moveableElement) {
   }
 }
 
-// function playAudioFromEvent(event) {
-//   playAudio(event.currentTarget.id);
-// }
-
 function playTargetAudio() {
-  playMoveableAudio(question.answerElement)
+  playMoveableAudio(questionElement.answerElement)
 }
 
 // function newItem(event) {
@@ -179,4 +200,20 @@ function playTargetAudio() {
 //   newItem.style.visibility = 'visible';
 //   playAudio(newItem.id);
 //   event.currentTarget.disabled = true;
+// }
+
+// function toggleLock(event) {
+//   const parent = event.target.parentElement;
+//   if (parent.getAttribute('draggable') === 'true') {
+//     parent.setAttribute('draggable', 'false');
+//   } else {
+//     parent.setAttribute('draggable', 'true');
+//   }
+// }
+
+// function clearMoveables() {
+//   for (let moveable of moveables.values()) {
+//     moveable.htmlElement.remove();
+//   }
+//   moveables.clear();
 // }
