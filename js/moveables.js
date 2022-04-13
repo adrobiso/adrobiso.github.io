@@ -25,7 +25,7 @@ function init(jsonData) {
 
   questionElement.htmlElement = document.getElementById('target1');
 
-  document.getElementById('score').innerHTML = '0/' + moveables.size;
+  document.getElementById('score').innerHTML = `0/${moveables.size}`;
 
   questionSelectionWeights = Array(moveables.size).fill().map((_, i) => (0.4 * ((moveables.size - 1 - i) / (moveables.size - 1))) + 1);
 
@@ -34,7 +34,7 @@ function init(jsonData) {
 }
 
 function createMoveables(words, categories, category, parentElement) {
-  if (categories.hasOwnProperty(category) === false) { return; }
+  if (!categories.hasOwnProperty(category)) { return; }
 
   for (let word of categories[category].words) {
     const newElement = createMoveableElement(words[word], parentElement);
@@ -85,17 +85,17 @@ function checkAnswerEvent(event) {
   }
 
   const question = questionOrder[questionOrder.length - 1];
-  if (question.hasOwnProperty("wasCorrect") === false) {
+  if (!question.hasOwnProperty("wasCorrect")) {
     question.wasCorrect = isCorrect;
     if (isCorrect) {
-      if (correctAnswers.includes(question.answer) === false) {
+      if (!correctAnswers.includes(question.answer)) {
         correctAnswers.push(question.answer);
       }
     } else {
       correctAnswers.length = 0;
     }
     const scoreElement = document.getElementById('score');
-    scoreElement.innerHTML = correctAnswers.length + '/' + moveables.size;
+    scoreElement.innerHTML = `${correctAnswers.length}/${moveables.size}`;
   }
 }
 
