@@ -60,18 +60,22 @@ function shuffle(a) {
 function createMoveableElement(data, parent) {
   const element = document.createElement('div');
   element.id = data.label;
+  element.classList.add('card');
   element.classList.add('moveable');
   element.onpointerdown = startDrag;
   element.onpointercancel = cancelDrag;
   const image = document.createElement('img');
   image.src = data.imgSrc;
-  image.classList.add('cardImage');
   element.appendChild(image);
   const audio = document.createElement('audio');
   audio.id = data.label + 'Audio';
   audio.src = data.audioSrc;
   audio.volume = 0.5;
   element.appendChild(audio);
+  const label = document.createElement('p');
+  label.innerHTML = data.label;
+  label.style.display = "none";
+  element.appendChild(label);
   parent.appendChild(element);
 
   return { htmlElement: element, audioElement: audio, data: data };

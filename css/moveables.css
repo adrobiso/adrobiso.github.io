@@ -53,10 +53,28 @@ body {
 }
 
 .moveable {
-   position: relative;
    z-index: 1;
    filter: drop-shadow(0.3rem 0.3rem 0.3rem rgba(0, 0, 20, 0.8));
    touch-action: none;
+}
+
+.card {
+   position: relative;
+}
+
+.card > img {
+   max-width: 100px;
+   max-height: 100px;
+   width: 100px;
+   height: auto;
+   display: block;
+}
+
+.card > p {
+   margin-top: 6px;
+   margin-bottom: 0;
+   background-color: white;
+   color: black;
 }
 
 .target {
@@ -73,25 +91,12 @@ body {
    max-height: 100px;
 }
 
-/* .card {
-   display: flex;
-   justify-content: center;
-   width: 100px;
-   height: 100px;
-} */
-
-.cardImage {
-   max-width: 100px;
-   max-height: 100px;
-   width: 100px;
-   height: auto;
-}
-
 .categoryImage {
    max-width: 150px;
    max-height: 150px;
    width: 150px;
    height: auto;
+   display: block;
 }
 
 #newQuestion {
