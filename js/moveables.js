@@ -1,6 +1,6 @@
 const moveables = new Map();
-const questionElement = { htmlElement: null, answerElement: null };
 const correctAnswers = [];
+let target;
 let questionOrder;
 let questionSelectionWeights;
 
@@ -23,22 +23,36 @@ function init(jsonData) {
     document.getElementById('newQuestion').disabled = true;
   }
 
-  questionElement.htmlElement = document.getElementById('target1');
+  target = createTarget();
 
   document.getElementById('score').innerHTML = `0/${moveables.size}`;
 
   questionSelectionWeights = Array(moveables.size).fill().map((_, i) => (0.4 * ((moveables.size - 1 - i) / (moveables.size - 1))) + 1);
 
-  questionOrder = Array.from(moveables.values()).map((moveable) => ({ answer: moveable.htmlElement }));
+  questionOrder = Array.from(moveables.values()).map(moveable => { return { answer: moveable } });
   shuffle(questionOrder);
+}
+
+function createTarget(parentElement) {
+  // const htmlElement = createTargetElement(parentElement);
+  const htmlElement = document.getElementById('target1');
+  return { htmlElement: htmlElement }
+}
+
+function createTargetElement(parentElement) {
+  const targetElement = document.createElement('div');
+  targetElement.classList.add('target');
+  targetElement.onclick = playTargetAudio;
+  parentElement.appendChild(targetElement);
+  return targetElement;
 }
 
 function createMoveables(words, categories, category, parentElement) {
   if (!categories.hasOwnProperty(category)) { return; }
 
   for (let word of categories[category].words) {
-    const newElement = createMoveableElement(words[word], parentElement);
-    moveables.set(newElement.htmlElement.id, newElement);
+    const newElement = createMoveable(word, words[word], parentElement);
+    moveables.set(newElement.baseElement.id, newElement);
   }
 }
 
@@ -49,40 +63,58 @@ function shuffleChildren(element) {
   }
 }
 
-function shuffle(a) {
-  for (let i = a.length - 1; i > 0; i--) {
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
+    [arr[i], arr[j]] = [arr[j], arr[i]];
   }
-  return a;
+  return arr;
 }
 
-function createMoveableElement(data, parent) {
+function createMoveable(id, data, parent) {
+  const element = createMoveableElement(id, parent);
+  // addLabelToMoveableElement(data.label, element);
+  addImageToMoveableElement(data.imgSrc, element);
+  const audio = addAudioToMoveableElement(data.audioSrc, element);
+
+  return { baseElement: element, audioElement: audio };
+}
+
+function createMoveableElement(id, parent) {
   const element = document.createElement('div');
-  element.id = data.label;
+  element.id = id;
   element.classList.add('card');
   element.classList.add('moveable');
   element.onpointerdown = startDrag;
   element.onpointercancel = cancelDrag;
-  const image = document.createElement('img');
-  image.src = data.imgSrc;
-  element.appendChild(image);
-  const audio = document.createElement('audio');
-  audio.id = data.label + 'Audio';
-  audio.src = data.audioSrc;
-  audio.volume = 0.5;
-  element.appendChild(audio);
-  const label = document.createElement('p');
-  label.innerHTML = data.label;
-  label.style.display = "none";
-  element.appendChild(label);
   parent.appendChild(element);
+  return element;
+}
 
-  return { htmlElement: element, audioElement: audio, data: data };
+function addLabelToMoveableElement(label, moveableElement) {
+  const labelElement = document.createElement('p');
+  labelElement.innerHTML = label;
+  moveableElement.appendChild(labelElement);
+  return labelElement;
+}
+
+function addAudioToMoveableElement(audioSrc, moveableElement) {
+  const audioElement = document.createElement('audio');
+  audioElement.src = audioSrc;
+  audioElement.volume = 0.7;
+  moveableElement.appendChild(audioElement);
+  return audioElement;
+}
+
+function addImageToMoveableElement(imgSrc, moveableElement) {
+  const imageElement = document.createElement('img');
+  imageElement.src = imgSrc;
+  moveableElement.appendChild(imageElement);
+  return imageElement;
 }
 
 function checkAnswerEvent(event) {
-  const isCorrect = checkAnswer(questionElement);
+  const isCorrect = checkAnswer(target);
   if (isCorrect) {
     document.getElementById('newQuestion').disabled = false;
     event.currentTarget.disabled = true;
@@ -103,20 +135,20 @@ function checkAnswerEvent(event) {
   }
 }
 
-function checkAnswer(questionElement) {
+function checkAnswer(target) {
   const overlappingMoveables = [];
   for (let moveable of moveables.values()) {
-    if (elementsAreOverlapping(moveable.htmlElement, questionElement.htmlElement)) {
+    if (elementsAreOverlapping(moveable.baseElement, target.htmlElement)) {
       overlappingMoveables.push(moveable);
     }
   }
   if (overlappingMoveables.length === 1) {
     const moveable = overlappingMoveables[0];
-    if (moveable.htmlElement.id === questionElement.answerElement.id) {
-      moveable.htmlElement.style.outline = '2px dashed lightgreen';
+    if (moveable.baseElement.id === target.answer.baseElement.id) {
+      moveable.baseElement.style.outline = '2px dashed lightgreen';
       return true;
     } else {
-      moveable.htmlElement.style.outline = '2px dashed red';
+      moveable.baseElement.style.outline = '2px dashed red';
       return false;
     }
   }
@@ -153,17 +185,17 @@ function setNewQuestion(event) {
 
 function reset() {
   resetMoveables();
-  questionElement.answerElement = null;
+  target.answer = null;
   document.getElementById('newQuestion').disabled = false;
   document.getElementById('checkAnswer').disabled = true;
 }
 
 function resetMoveables() {
   for (let moveable of moveables.values()) {
-    moveable.htmlElement.style.outline = 'none';
-    moveable.htmlElement.style.position = '';
-    moveable.htmlElement.style.left = 'initial';
-    moveable.htmlElement.style.top = 'initial';
+    moveable.baseElement.style.outline = 'none';
+    moveable.baseElement.style.position = '';
+    moveable.baseElement.style.left = 'initial';
+    moveable.baseElement.style.top = 'initial';
   }
 }
 
@@ -179,24 +211,22 @@ function setRandomAnswer() {
   }
 
   const questionAnswerOrder = questionOrder.map(question => question.answer);
-  questionElement.answerElement = questionAnswerOrder[selectedIndex];
-  playMoveableAudio(questionElement.answerElement);
+  target.answer = questionAnswerOrder[selectedIndex];
+  target.answer.audioElement.play();
 
-  if (questionAnswerOrder.includes(questionElement.answerElement)) {
-    const currentIndex = questionAnswerOrder.indexOf(questionElement.answerElement);
+  if (questionAnswerOrder.includes(target.answer)) {
+    const currentIndex = questionAnswerOrder.indexOf(target.answer);
     questionOrder.splice(currentIndex, 1);
   }
-  questionOrder.push({ answer: questionElement.answerElement });
+  questionOrder.push({ answer: target.answer });
 }
 
-function playMoveableAudio(moveableElement) {
-  if (moveableElement !== null) {
-    moveables.get(moveableElement.id).audioElement.play();
-  }
+function playMoveableAudio(moveable) {
+
 }
 
 function playTargetAudio() {
-  playMoveableAudio(questionElement.answerElement)
+  target.answer.audioElement.play();
 }
 
 // function newItem(event) {
