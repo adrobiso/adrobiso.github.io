@@ -204,9 +204,64 @@
       "imgSrc": "./media/img/sick.png",
       "audioSrc": "./media/audio/sick.mp3"
    },
-   "hurt": {
-      "label": "hurt",
-      "imgSrc": "./media/img/hurt.png",
-      "audioSrc": "./media/audio/hurt.mp3"
+   "january": {
+      "label": "January",
+      "imgSrc": "./media/img/january.svg",
+      "audioSrc": "./media/audio/january.mp3"
+   },
+   "february": {
+      "label": "February",
+      "imgSrc": "./media/img/february.svg",
+      "audioSrc": "./media/audio/february.mp3"
+   },
+   "march": {
+      "label": "March",
+      "imgSrc": "./media/img/march.svg",
+      "audioSrc": "./media/audio/march.mp3"
+   },
+   "april": {
+      "label": "April",
+      "imgSrc": "./media/img/april.svg",
+      "audioSrc": "./media/audio/april.mp3"
+   },
+   "may": {
+      "label": "May",
+      "imgSrc": "./media/img/may.svg",
+      "audioSrc": "./media/audio/may.mp3"
+   },
+   "june": {
+      "label": "June",
+      "imgSrc": "./media/img/june.svg",
+      "audioSrc": "./media/audio/june.mp3"
+   },
+   "july": {
+      "label": "July",
+      "imgSrc": "./media/img/july.svg",
+      "audioSrc": "./media/audio/july.mp3"
+   },
+   "august": {
+      "label": "August",
+      "imgSrc": "./media/img/august.svg",
+      "audioSrc": "./media/audio/august.mp3"
+   },
+   "september": {
+      "label": "September",
+      "imgSrc": "./media/img/september.svg",
+      "audioSrc": "./media/audio/september.mp3"
+   },
+   "october": {
+      "label": "October",
+      "imgSrc": "./media/img/october.svg",
+      "audioSrc": "./media/audio/october.mp3"
+   },
+   "november": {
+      "label": "November",
+      "imgSrc": "./media/img/november.svg",
+      "audioSrc": "./media/audio/november.mp3"
+   },
+   "december": {
+      "label": "December",
+      "imgSrc": "./media/img/december.svg",
+      "audioSrc": "./media/audio/december.mp3"
    }
 }
