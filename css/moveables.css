@@ -77,12 +77,35 @@ body {
    color: black;
 }
 
+.card > p {
+   margin-top: 6px;
+   margin-bottom: 0;
+   background-color: white;
+   color: black;
+}
+
 .target {
+   position: relative;
    height: 150px;
    width: 150px;
    outline: 3px dashed whitesmoke;
    z-index: 0;
    visibility: hidden;
+}
+
+.targetImage {
+   max-width: 100px;
+   max-height: 100px;
+   width: 100px;
+   height: auto;
+   display: block;
+}
+
+.target > p {
+   margin-top: 0;
+   margin-bottom: 0;
+   background-color: white;
+   color: black;
 }
 
 .spacer {
@@ -97,6 +120,19 @@ body {
    width: 150px;
    height: auto;
    display: block;
+}
+
+.audioIndicator {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   width: 30px;
+}
+
+#questionForm {
+   position: absolute;
+   top: 10px;
+   left: 120px;
 }
 
 #newQuestion {

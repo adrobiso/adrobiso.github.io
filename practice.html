@@ -8,10 +8,18 @@
 </head>
 
 <body>
-   <button id="newQuestion" type="button" onclick="setNewQuestion(event)">
+   <button id="newQuestion" type="button">
       <img src="./media/img/next.png" alt="New Question">
    </button>
-   <button id="checkAnswer" type="button" onclick="checkAnswerEvent(event)" disabled="true">
+   <form id="questionForm">
+      <input type="checkbox" id="questionAudioCheckbox" checked="true">
+      <label for="questionAudioCheckbox">Audio</label>
+      <input type="checkbox" id="questionImageCheckbox" checked="false">
+      <label for="questionImageCheckbox">Image</label>
+      <input type="checkbox" id="questionLabelCheckbox" checked="false">
+      <label for="questionLabelCheckbox">Label</label>
+   </form>
+   <button id="checkAnswer" type="button" disabled="true">
       <img src="./media/img/yesno.png" alt="Check Answer">
    </button>
    <div class="verticalBox">
@@ -19,9 +27,7 @@
          <div class="practiceBox">
             <div id="score"></div>
             <div class="spacer"></div>
-            <div id="target1" class="target" onclick="playTargetAudio(event)">
-               <img src="./media/img/speaker.png" alt="play audio" width="30px">
-            </div>
+            <div id="targetBox"></div>
             <div class="spacer"></div>
             <div id="moveablesBox" class="moveablesBox"></div>
          </div>

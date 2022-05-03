@@ -25,3 +25,20 @@ function endDrag(event) {
     event.preventDefault();
   }
 }
+
+function elementsAreOverlapping(a, b) {
+  const al = a.offsetLeft;
+  const ar = a.offsetLeft + a.offsetWidth;
+  const bl = b.offsetLeft;
+  const br = b.offsetLeft + b.offsetWidth;
+
+  const at = a.offsetTop;
+  const ab = a.offsetTop + a.offsetHeight;
+  const bt = b.offsetTop;
+  const bb = b.offsetTop + b.offsetHeight;
+
+  if (bl > ar || br < al) { return false; }//overlap not possible
+  if (bt > ab || bb < at) { return false; }//overlap not possible
+
+  return true;
+}
