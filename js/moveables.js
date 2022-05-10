@@ -2,7 +2,8 @@
   const ui = {};
   const correctAnswers = [];
   const currentQuestion = {};
-  const questionOptions = { playAudio: true, showImage: false, showLabel: false };
+  const questionOptions = { playsAudio: true, showsImage: false, showsLabel: false };
+  const answerOptions = { playsAudio: false, showsImage: true, showsLabel: false };
   let questionOrder;
   let questionSelectionWeights;
 
@@ -43,34 +44,47 @@
     ui.questionAudioCheckbox = document.getElementById('questionAudioCheckbox');
     ui.questionImageCheckbox = document.getElementById('questionImageCheckbox');
     ui.questionLabelCheckbox = document.getElementById('questionLabelCheckbox');
+    ui.answerAudioCheckbox = document.getElementById('answerAudioCheckbox');
+    ui.answerImageCheckbox = document.getElementById('answerImageCheckbox');
+    ui.answerLabelCheckbox = document.getElementById('answerLabelCheckbox');
     ui.moveables = new Map();
 
-    ui.questionAudioCheckbox.checked = questionOptions.playAudio;
-    ui.questionImageCheckbox.checked = questionOptions.showImage;
-    ui.questionLabelCheckbox.checked = questionOptions.showLabel;
+    ui.questionAudioCheckbox.checked = questionOptions.playsAudio;
+    ui.questionImageCheckbox.checked = questionOptions.showsImage;
+    ui.questionLabelCheckbox.checked = questionOptions.showsLabel;
+    ui.answerAudioCheckbox.checked = answerOptions.playsAudio;
+    ui.answerImageCheckbox.checked = answerOptions.showsImage;
+    ui.answerLabelCheckbox.checked = answerOptions.showsLabel;
 
     ui.newQuestionButton.onclick = setNewQuestion;
     ui.checkAnswerButton.onclick = checkAnswerEvent;
-    ui.questionAudioCheckbox.onchange = setQuestionAudio;
-    ui.questionImageCheckbox.onchange = setQuestionImage;
-    ui.questionLabelCheckbox.onchange = setQuestionLabel;
+    ui.questionAudioCheckbox.onchange = handleQuestionAudioToggle;
+    ui.questionImageCheckbox.onchange = handleQuestionImageToggle;
+    ui.questionLabelCheckbox.onchange = handleQuestionLabelToggle;
+    ui.answerAudioCheckbox.onchange = handleAnswerAudioToggle;
+    ui.answerImageCheckbox.onchange = handleAnswerImageToggle;
+    ui.answerLabelCheckbox.onchange = handleAnswerLabelToggle;
 
-    //TODO: link moveables to backend structures?
     createMoveables(wordData, ui.moveablesBox);
-    for (let moveableElement of ui.moveables.values()) {
-      moveableElement.labelElement.style.display = 'none';
-    }
     shuffleChildren(ui.moveablesBox);
 
     createTarget(ui.targetBox);
-    addAudioIndicatorToTarget();
 
     ui.scoreLabel.innerHTML = `0/${ui.moveables.size}`;
   }
 
   function createTarget(parentElement) {
-    ui.target = createTargetElement(parentElement);;
-    return { htmlElement: ui.target };
+    ui.target = {};
+    ui.target.htmlElement = createTargetElement(parentElement);
+    ui.target.audioIndicatorElement = createImageElement('./media/img/speaker.png', 'play question audio', ui.target.htmlElement);
+    ui.target.audioIndicatorElement.classList.add('audioIndicator');
+    ui.target.audioIndicatorElement.style.display = questionOptions.playsAudio ? '' : 'none';
+    ui.target.htmlElement.onclick = questionOptions.playsAudio ? playTargetAudio : null;
+    ui.target.imageElement = createImageElement('', 'no question', ui.target.htmlElement);
+    ui.target.imageElement.classList.add('targetImage');
+    ui.target.imageElement.style.display = questionOptions.showsImage ? '' : 'none';
+    ui.target.labelElement = createLabelElement('no question', ui.target.htmlElement);
+    ui.target.labelElement.style.display = questionOptions.showsLabel ? '' : 'none';
   }
 
   function createTargetElement(parentElement) {
@@ -81,74 +95,63 @@
     return targetElement;
   }
 
-  function setQuestionLabel(event) {
-    showQuestionLabel(event.currentTarget.checked);
+  function handleQuestionLabelToggle(event) {
+    setQuestionShowsLabel(event.currentTarget.checked);
   }
 
-  function showQuestionLabel(show) {
-    questionOptions.showLabel = show;
-    if (show) { addLabelToTarget(); }
-    else { removeLabelFromTarget(); }
+  function setQuestionShowsLabel(showsLabel) {
+    questionOptions.showsLabel = showsLabel;
+    ui.target.labelElement.style.display = showsLabel ? '' : 'none';
   }
 
-  function addLabelToTarget() {
-    ui.targetLabel = createLabelElement(ui.moveables.get(currentQuestion.answer).labelElement.innerHTML, ui.target);
+  function handleQuestionImageToggle(event) {
+    setQuestionShowsImage(event.currentTarget.checked);
   }
 
-  function removeLabelFromTarget() {
-    ui.targetLabel.remove();
-    delete ui.targetLabel;
+  function setQuestionShowsImage(showsImage) {
+    questionOptions.showsImage = showsImage;
+    ui.target.imageElement.style.display = showsImage ? '' : 'none';
   }
 
-  function setQuestionImage(event) {
-    showQuestionImage(event.currentTarget.checked);
+  function handleQuestionAudioToggle(event) {
+    setQuestionPlaysAudio(event.currentTarget.checked);
   }
 
-  function showQuestionImage(show) {
-    questionOptions.showImage = show;
-    if (show) { addImageToTarget(); }
-    else { removeImageFromTarget(); }
+  function setQuestionPlaysAudio(playsAudio) {
+    questionOptions.playsAudio = playsAudio;
+    ui.target.audioIndicatorElement.style.display = playsAudio ? '' : 'none';
+    ui.target.htmlElement.onclick = playsAudio ? playTargetAudio : null;
   }
 
-  function addImageToTarget() {
-    const answerImageElement = ui.moveables.get(currentQuestion.answer).imageElement;
-    const targetImageElement = createImageElement(answerImageElement.src, answerImageElement.altText, ui.target);
-    targetImageElement.classList.add('targetImage');
-    ui.targetImage = targetImageElement;
+  function handleAnswerLabelToggle(event) {
+    answerOptions.showsLabel = event.currentTarget.checked;
+    for (let moveable of ui.moveables.values()) {
+      moveable.labelElement.style.display = answerOptions.showsLabel ? '' : 'none';
+    }
   }
 
-  function removeImageFromTarget() {
-    ui.targetImage.remove();
-    delete ui.targetImage;
+  function handleAnswerImageToggle(event) {
+    answerOptions.showsImage = event.currentTarget.checked;
+    for (let moveable of ui.moveables.values()) {
+      moveable.imageElement.style.display = answerOptions.showsImage ? '' : 'none';
+    }
   }
 
-  function setQuestionAudio(event) {
-    playQuestionAudio(event.currentTarget.checked);
-  }
-
-  function playQuestionAudio(play) {
-    questionOptions.playAudio = play;
-    if (play) { addAudioIndicatorToTarget(); }
-    else { removeAudioIndicatorFromTarget(); }
-  }
-
-  function addAudioIndicatorToTarget() {
-    const speakerImageElement = createImageElement('./media/img/speaker.png', 'play target audio', ui.target);
-    speakerImageElement.classList.add('audioIndicator');
-    ui.target.onclick = playTargetAudio;
-    ui.targetAudioImage = speakerImageElement;
-  }
-
-  function removeAudioIndicatorFromTarget() {
-    ui.targetAudioImage.remove();
-    delete ui.targetAudioImage;
-    ui.target.onclick = null;
+  function handleAnswerAudioToggle(event) {
+    answerOptions.playsAudio = event.currentTarget.checked;
+    for (let moveable of ui.moveables.values()) {
+      moveable.audioIndicator.style.display = answerOptions.playsAudio ? '' : 'none';
+      moveable.baseElement.onclick = answerOptions.playsAudio ? handlePlayMoveableAudio : null;
+    }
   }
 
   function createMoveables(wordData, parentElement) {
     for (let word of Object.keys(wordData)) {
-      const newElement = createMoveable(word, wordData[word], parentElement);
-      ui.moveables.set(word, newElement);
+      const moveable = createMoveable(word, wordData[word], parentElement);
+      moveable.labelElement.style.display = answerOptions.showsLabel ? '' : 'none';
+      moveable.audioIndicator.style.display = answerOptions.playsAudio ? '' : 'none';
+      moveable.baseElement.onclick = answerOptions.playsAudio ? handlePlayMoveableAudio : null;
+      ui.moveables.set(word, moveable);
     }
   }
 
@@ -169,11 +172,12 @@
 
   function createMoveable(id, data, parent) {
     const element = createMoveableElement(id, parent);
-    const label = createLabelElement(data.label, element);
     const image = createImageElement(data.imgSrc, data.label + ' image', element);
+    const label = createLabelElement(data.label, element);
     const audio = createAudioElement(data.audioSrc, element);
+    const audioIndicator = createImageElement('./media/img/speaker.png', 'play question audio', element);
 
-    return { baseElement: element, labelElement: label, imageElement: image, audioElement: audio };
+    return { baseElement: element, labelElement: label, imageElement: image, audioElement: audio, audioIndicator: audioIndicator };
   }
 
   function createMoveableElement(id, parent) {
@@ -234,7 +238,7 @@
   function checkAnswer() {
     const overlappingMoveables = [];
     for (let moveable of ui.moveables.values()) {
-      if (elementsAreOverlapping(moveable.baseElement, ui.target)) {
+      if (elementsAreOverlapping(moveable.baseElement, ui.target.htmlElement)) {
         overlappingMoveables.push(moveable);
       }
     }
@@ -258,7 +262,7 @@
     setRandomAnswer();
     shuffleChildren(ui.moveablesBox);
     ui.checkAnswerButton.disabled = false;
-    ui.target.style.visibility = "visible";
+    ui.target.htmlElement.style.visibility = "visible";
     ui.newQuestionButton.disabled = true;
   }
 
@@ -292,16 +296,13 @@
     const questionAnswerOrder = questionOrder.map(question => question.answer);
     currentQuestion.answer = questionAnswerOrder[selectedIndex];
 
-    if (questionOptions.playAudio) {
-      ui.moveables.get(currentQuestion.answer).audioElement.play();
+    const answerMoveable = ui.moveables.get(currentQuestion.answer);
+    if (questionOptions.playsAudio) {
+      answerMoveable.audioElement.play();
     }
-    if (questionOptions.showImage) {
-      ui.targetImage.src = ui.moveables.get(currentQuestion.answer).imageElement.src;
-      ui.targetImage.altText = ui.moveables.get(currentQuestion.answer).imageElement.altText;
-    }
-    if (questionOptions.showLabel) {
-      ui.targetLabel.innerHTML = ui.moveables.get(currentQuestion.answer).labelElement.innerHTML;
-    }
+    ui.target.imageElement.src = answerMoveable.imageElement.src;
+    ui.target.imageElement.altText = answerMoveable.imageElement.altText;
+    ui.target.labelElement.innerHTML = answerMoveable.labelElement.innerHTML;
 
     if (questionAnswerOrder.includes(currentQuestion.answer)) {
       const currentIndex = questionAnswerOrder.indexOf(currentQuestion.answer);
@@ -312,5 +313,9 @@
 
   function playTargetAudio() {
     ui.moveables.get(currentQuestion.answer).audioElement.play();
+  }
+
+  function handlePlayMoveableAudio(event) {
+    ui.moveables.get(event.currentTarget.id).audioElement.play();
   }
 })();

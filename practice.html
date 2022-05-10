@@ -11,14 +11,33 @@
    <button id="newQuestion" type="button">
       <img src="./media/img/next.png" alt="New Question">
    </button>
-   <form id="questionForm">
-      <input type="checkbox" id="questionAudioCheckbox" checked="true">
-      <label for="questionAudioCheckbox">Audio</label>
-      <input type="checkbox" id="questionImageCheckbox" checked="false">
-      <label for="questionImageCheckbox">Image</label>
-      <input type="checkbox" id="questionLabelCheckbox" checked="false">
-      <label for="questionLabelCheckbox">Label</label>
-   </form>
+   <div id="forms">
+      <form id="questionForm">
+         <label>❓</label>
+         <br>
+         <input type="checkbox" id="questionAudioCheckbox">
+         <label for="questionAudioCheckbox">🔈</label>
+         <br>
+         <input type="checkbox" id="questionImageCheckbox">
+         <label for="questionImageCheckbox">🖼️</label>
+         <br>
+         <input type="checkbox" id="questionLabelCheckbox">
+         <label for="questionLabelCheckbox">🔤</label>
+      </form>
+      <br>
+      <form id="answerForm">
+         <label>🙋</label>
+         <br>
+         <input type="checkbox" id="answerAudioCheckbox" checked="false">
+         <label for="answerAudioCheckbox">🔈</label>
+         <br>
+         <input type="checkbox" id="answerImageCheckbox" checked="true">
+         <label for="answerImageCheckbox">🖼️</label>
+         <br>
+         <input type="checkbox" id="answerLabelCheckbox" checked="false">
+         <label for="answerLabelCheckbox">🔤</label>
+      </form>
+   </div>
    <button id="checkAnswer" type="button" disabled="true">
       <img src="./media/img/yesno.png" alt="Check Answer">
    </button>
@@ -35,7 +54,7 @@
    </div>
    <a id="backLink" href="index.html">
       <img src="./media/img/back.png" alt="Back">
-   </button>
+      </button>
 </body>
 
 </html>

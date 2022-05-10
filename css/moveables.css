@@ -129,10 +129,10 @@ body {
    width: 30px;
 }
 
-#questionForm {
+#forms {
    position: absolute;
-   top: 10px;
-   left: 120px;
+   top: 120px;
+   left: 10px;
 }
 
 #newQuestion {
