@@ -41,6 +41,8 @@
     ui.newQuestionButton = document.getElementById('newQuestion');
     ui.checkAnswerButton = document.getElementById('checkAnswer');
     ui.scoreLabel = document.getElementById('score');
+    ui.showOptionsButton = document.getElementById('showOptions');
+    ui.optionsDiv = document.getElementById('forms');
     ui.questionAudioCheckbox = document.getElementById('questionAudioCheckbox');
     ui.questionImageCheckbox = document.getElementById('questionImageCheckbox');
     ui.questionLabelCheckbox = document.getElementById('questionLabelCheckbox');
@@ -58,6 +60,7 @@
 
     ui.newQuestionButton.onclick = setNewQuestion;
     ui.checkAnswerButton.onclick = checkAnswerEvent;
+    ui.showOptionsButton.onclick = handleShowOptionsToggle;
     ui.questionAudioCheckbox.onchange = handleQuestionAudioToggle;
     ui.questionImageCheckbox.onchange = handleQuestionImageToggle;
     ui.questionLabelCheckbox.onchange = handleQuestionLabelToggle;
@@ -81,7 +84,7 @@
     ui.target.audioIndicatorElement.style.display = questionOptions.playsAudio ? '' : 'none';
     ui.target.htmlElement.onclick = questionOptions.playsAudio ? playTargetAudio : null;
     ui.target.imageElement = createImageElement('', 'no question', ui.target.htmlElement);
-    ui.target.imageElement.classList.add('targetImage');
+    ui.target.imageElement.classList.add('cardImg');
     ui.target.imageElement.style.display = questionOptions.showsImage ? '' : 'none';
     ui.target.labelElement = createLabelElement('no question', ui.target.htmlElement);
     ui.target.labelElement.style.display = questionOptions.showsLabel ? '' : 'none';
@@ -89,10 +92,15 @@
 
   function createTargetElement(parentElement) {
     const targetElement = document.createElement('div');
+    targetElement.classList.add('card');
     targetElement.classList.add('target');
     targetElement.onclick = playTargetAudio;
     parentElement.appendChild(targetElement);
     return targetElement;
+  }
+
+  function handleShowOptionsToggle() {
+    ui.optionsDiv.style.display = ui.optionsDiv.style.display === '' ? 'block' : '';
   }
 
   function handleQuestionLabelToggle(event) {
@@ -102,6 +110,7 @@
   function setQuestionShowsLabel(showsLabel) {
     questionOptions.showsLabel = showsLabel;
     ui.target.labelElement.style.display = showsLabel ? '' : 'none';
+    reset();
   }
 
   function handleQuestionImageToggle(event) {
@@ -111,6 +120,7 @@
   function setQuestionShowsImage(showsImage) {
     questionOptions.showsImage = showsImage;
     ui.target.imageElement.style.display = showsImage ? '' : 'none';
+    reset();
   }
 
   function handleQuestionAudioToggle(event) {
@@ -121,6 +131,7 @@
     questionOptions.playsAudio = playsAudio;
     ui.target.audioIndicatorElement.style.display = playsAudio ? '' : 'none';
     ui.target.htmlElement.onclick = playsAudio ? playTargetAudio : null;
+    reset();
   }
 
   function handleAnswerLabelToggle(event) {
@@ -128,6 +139,7 @@
     for (let moveable of ui.moveables.values()) {
       moveable.labelElement.style.display = answerOptions.showsLabel ? '' : 'none';
     }
+    reset();
   }
 
   function handleAnswerImageToggle(event) {
@@ -135,6 +147,7 @@
     for (let moveable of ui.moveables.values()) {
       moveable.imageElement.style.display = answerOptions.showsImage ? '' : 'none';
     }
+    reset();
   }
 
   function handleAnswerAudioToggle(event) {
@@ -143,6 +156,7 @@
       moveable.audioIndicator.style.display = answerOptions.playsAudio ? '' : 'none';
       moveable.baseElement.onclick = answerOptions.playsAudio ? handlePlayMoveableAudio : null;
     }
+    reset();
   }
 
   function createMoveables(wordData, parentElement) {
@@ -173,9 +187,11 @@
   function createMoveable(id, data, parent) {
     const element = createMoveableElement(id, parent);
     const image = createImageElement(data.imgSrc, data.label + ' image', element);
+    image.classList.add('cardImg');
     const label = createLabelElement(data.label, element);
     const audio = createAudioElement(data.audioSrc, element);
     const audioIndicator = createImageElement('./media/img/speaker.png', 'play question audio', element);
+    audioIndicator.classList.add('audioIndicator');
 
     return { baseElement: element, labelElement: label, imageElement: image, audioElement: audio, audioIndicator: audioIndicator };
   }
@@ -231,8 +247,13 @@
       } else {
         correctAnswers.length = 0;
       }
-      ui.scoreLabel.innerHTML = `${correctAnswers.length}/${ui.moveables.size}`;
+      updateScoreText();
     }
+  }
+
+  function updateScoreText() {
+    ui.scoreLabel.innerHTML = `${correctAnswers.length}/${ui.moveables.size}`;
+    ui.scoreLabel.style.color = correctAnswers.length === ui.moveables.size ? 'lightgreen' : 'white';
   }
 
   function checkAnswer() {
@@ -267,10 +288,10 @@
   }
 
   function reset() {
-    resetMoveables();
-    currentQuestion.answer = null;
-    ui.newQuestionButton.disabled = false;
-    ui.checkAnswerButton.disabled = true;
+    setNewQuestion();
+    ui.scoreLabel.style.color = 'white';
+    correctAnswers.length = 0;
+    updateScoreText();
   }
 
   function resetMoveables() {

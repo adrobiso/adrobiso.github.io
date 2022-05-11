@@ -34,15 +34,15 @@ body {
    display: flex;
    flex-direction: column;
    align-items: center;
+   justify-content: space-evenly;
    height: 100%;
 }
 
 .moveablesBox {
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-around;
+   justify-content: space-evenly;
    align-items: center;
-   width: 90%;
 }
 
 .moveablesBox > div {
@@ -60,9 +60,13 @@ body {
 
 .card {
    position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
 }
 
-.card > img {
+.cardImg {
    max-width: 100px;
    max-height: 100px;
    width: 100px;
@@ -77,11 +81,8 @@ body {
    color: black;
 }
 
-.card > p {
-   margin-top: 6px;
-   margin-bottom: 0;
-   background-color: white;
-   color: black;
+.audioIndicator {
+   width: 20px;
 }
 
 .target {
@@ -93,27 +94,6 @@ body {
    visibility: hidden;
 }
 
-.targetImage {
-   max-width: 100px;
-   max-height: 100px;
-   width: 100px;
-   height: auto;
-   display: block;
-}
-
-.target > p {
-   margin-top: 0;
-   margin-bottom: 0;
-   background-color: white;
-   color: black;
-}
-
-.spacer {
-   flex: 1 1 auto;
-   min-height: 10px;
-   max-height: 100px;
-}
-
 .categoryImage {
    max-width: 150px;
    max-height: 150px;
@@ -122,17 +102,24 @@ body {
    display: block;
 }
 
-.audioIndicator {
+#showOptions {
    position: absolute;
-   top: 10px;
+   bottom: 10px;
    right: 10px;
-   width: 30px;
+   width: 50px;
+   height: 50px;
 }
 
 #forms {
+   display: none;
    position: absolute;
-   top: 120px;
-   left: 10px;
+   bottom: 70px;
+   right: 10px;
+   text-align: center;
+}
+
+#forms > form {
+   background-color: rgba(255, 255, 255, 0.5);
 }
 
 #newQuestion {
@@ -181,6 +168,10 @@ body {
 }
 
 #score {
+   position:absolute;
+   top: 10px;
+   left: 50%;
+   transform: translate(-50%, 0);
    color: white;
    font-size: x-large;
 }

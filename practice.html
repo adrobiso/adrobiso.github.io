@@ -11,43 +11,42 @@
    <button id="newQuestion" type="button">
       <img src="./media/img/next.png" alt="New Question">
    </button>
+   <button id="showOptions" type="button">⚙️</button>
    <div id="forms">
       <form id="questionForm">
          <label>❓</label>
          <br>
-         <input type="checkbox" id="questionAudioCheckbox">
          <label for="questionAudioCheckbox">🔈</label>
+         <input type="checkbox" id="questionAudioCheckbox">
          <br>
-         <input type="checkbox" id="questionImageCheckbox">
          <label for="questionImageCheckbox">🖼️</label>
+         <input type="checkbox" id="questionImageCheckbox">
          <br>
-         <input type="checkbox" id="questionLabelCheckbox">
          <label for="questionLabelCheckbox">🔤</label>
+         <input type="checkbox" id="questionLabelCheckbox">
       </form>
       <br>
       <form id="answerForm">
          <label>🙋</label>
          <br>
-         <input type="checkbox" id="answerAudioCheckbox" checked="false">
          <label for="answerAudioCheckbox">🔈</label>
+         <input type="checkbox" id="answerAudioCheckbox" checked="false">
          <br>
-         <input type="checkbox" id="answerImageCheckbox" checked="true">
          <label for="answerImageCheckbox">🖼️</label>
+         <input type="checkbox" id="answerImageCheckbox" checked="true">
          <br>
-         <input type="checkbox" id="answerLabelCheckbox" checked="false">
          <label for="answerLabelCheckbox">🔤</label>
+         <input type="checkbox" id="answerLabelCheckbox" checked="false">
       </form>
    </div>
    <button id="checkAnswer" type="button" disabled="true">
       <img src="./media/img/yesno.png" alt="Check Answer">
    </button>
+   <div id="score"></div>
    <div class="verticalBox">
       <div class="content" onpointermove="drag(event)" onpointerup="endDrag(event)">
          <div class="practiceBox">
-            <div id="score"></div>
-            <div class="spacer"></div>
             <div id="targetBox"></div>
-            <div class="spacer"></div>
             <div id="moveablesBox" class="moveablesBox"></div>
          </div>
       </div>
