@@ -75,6 +75,7 @@ body {
 }
 
 .card > p {
+   font-size: larger;
    margin-top: 6px;
    margin-bottom: 0;
    background-color: white;
@@ -113,13 +114,25 @@ body {
 #forms {
    display: none;
    position: absolute;
-   bottom: 70px;
-   right: 10px;
+   bottom: 10px;
+   right: 70px;
    text-align: center;
+   z-index: 2;
 }
 
 #forms > form {
    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#forms > form  > input {
+   width: 30px;
+   height: 30px;
+   margin-right: 10px;
+}
+
+#forms > form  > label {
+   font-size: 30px;
+   margin-left: 10px;
 }
 
 #newQuestion {

@@ -288,7 +288,7 @@
   }
 
   function reset() {
-    setNewQuestion();
+    if (currentQuestion.answer) { setNewQuestion(); }
     ui.scoreLabel.style.color = 'white';
     correctAnswers.length = 0;
     updateScoreText();

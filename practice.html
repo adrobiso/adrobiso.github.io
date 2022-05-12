@@ -18,10 +18,8 @@
          <br>
          <label for="questionAudioCheckbox">🔈</label>
          <input type="checkbox" id="questionAudioCheckbox">
-         <br>
          <label for="questionImageCheckbox">🖼️</label>
          <input type="checkbox" id="questionImageCheckbox">
-         <br>
          <label for="questionLabelCheckbox">🔤</label>
          <input type="checkbox" id="questionLabelCheckbox">
       </form>
@@ -31,10 +29,8 @@
          <br>
          <label for="answerAudioCheckbox">🔈</label>
          <input type="checkbox" id="answerAudioCheckbox" checked="false">
-         <br>
          <label for="answerImageCheckbox">🖼️</label>
          <input type="checkbox" id="answerImageCheckbox" checked="true">
-         <br>
          <label for="answerLabelCheckbox">🔤</label>
          <input type="checkbox" id="answerLabelCheckbox" checked="false">
       </form>
@@ -44,7 +40,7 @@
    </button>
    <div id="score"></div>
    <div class="verticalBox">
-      <div class="content" onpointermove="drag(event)" onpointerup="endDrag(event)">
+      <div class="content" onpointermove="drag(event)" onpointerup="endDrag(event)" onpointerleave="cancelDrag(event)">
          <div class="practiceBox">
             <div id="targetBox"></div>
             <div id="moveablesBox" class="moveablesBox"></div>
