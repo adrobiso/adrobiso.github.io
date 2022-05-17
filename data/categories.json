@@ -15,7 +15,7 @@
       ]
    },
    "countries": {
-      "iconSrc": "./media/img/Flag-map_of_the_world_(2017).png",
+      "iconSrc": "./media/img/flags.png",
       "words": [
          "america",
          "japan",
@@ -45,7 +45,7 @@
       ]
    },
    "feelings": {
-      "iconSrc": "./media/img/feelings.jpg",
+      "iconSrc": "./media/img/feelings.png",
       "words": [
          "happy",
          "sad",
@@ -57,6 +57,16 @@
          "nervous",
          "sick",
          "hurt"
+      ]
+   },
+   "feelingLevels": {
+      "iconSrc": "./media/img/feelingLevels.png",
+      "words": [
+         "great",
+         "good",
+         "fine",
+         "soso",
+         "notSoGood"
       ]
    },
    "months": {
@@ -74,6 +84,15 @@
          "october",
          "november",
          "december"
+      ]
+   },
+   "seasons": {
+      "iconSrc": "./media/img/seasons.png",
+      "words": [
+         "spring",
+         "summer",
+         "fall",
+         "winter"
       ]
    }
 }

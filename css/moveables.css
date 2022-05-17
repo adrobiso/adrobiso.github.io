@@ -121,18 +121,18 @@ body {
 }
 
 #forms > form {
-   background-color: rgba(255, 255, 255, 0.5);
+   background-color: rgba(220, 220, 220, 0.9);
 }
 
 #forms > form  > input {
    width: 30px;
    height: 30px;
-   margin-right: 10px;
+   margin-right: 20px;
 }
 
 #forms > form  > label {
    font-size: 30px;
-   margin-left: 10px;
+   margin-left: 20px;
 }
 
 #newQuestion {

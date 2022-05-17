@@ -1,12 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 3">
-   <style>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 3 3"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="numbers.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#323232"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.25098039"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="256"
+     inkscape:cx="1.4980469"
+     inkscape:cy="1.4980469"
+     inkscape:window-width="1858"
+     inkscape:window-height="1058"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <style
+     id="style2">
       .centered { 
          dominant-baseline: central; 
          text-anchor: middle;
          font-family: sans-serif; }
    </style>
-   <rect width="3" height="3" fill="#fff"/>
-   <text x="25%" y ="50%" class="centered" font-size="1px" fill="red">1</text>
-   <text x="50%" y ="50%" class="centered" font-size="1px" fill="blue">2</text>
-   <text x="75%" y ="50%" class="centered" font-size="1px" fill="green">3</text>
+  <rect
+     height="3"
+     fill="#ffffff"
+     id="rect4"
+     width="3"
+     x="0"
+     y="0"
+     rx="0.5"
+     ry="0.5"
+     style="fill:#ffffff;fill-opacity:1" />
+  <text
+     x="0.68563497"
+     y="1.1812969"
+     class="centered"
+     font-size="1px"
+     fill="#ff0000"
+     id="text6"
+     style="font-size:2px"
+     transform="rotate(5.5815747)">1</text>
+  <text
+     x="1.5991547"
+     y="1.7777767"
+     class="centered"
+     font-size="1px"
+     fill="#0000ff"
+     id="text8"
+     style="font-size:2px"
+     transform="rotate(7.670238)">2</text>
+  <text
+     x="2.0772269"
+     y="1.6302929"
+     class="centered"
+     font-size="1px"
+     fill="#008000"
+     id="text10"
+     style="font-size:2px;stroke-width:0.999866"
+     transform="matrix(0.98493232,-0.17216609,0.1722121,0.98519553,0,0)">3</text>
 </svg>

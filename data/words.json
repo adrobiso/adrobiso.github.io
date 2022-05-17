@@ -204,6 +204,36 @@
       "imgSrc": "./media/img/sick.png",
       "audioSrc": "./media/audio/sick.mp3"
    },
+   "hurt": {
+      "label": "hurt",
+      "imgSrc": "./media/img/hurt.png",
+      "audioSrc": "./media/audio/hurt.mp3"
+   },
+   "great": {
+      "label": "great",
+      "imgSrc": "./media/img/great.png",
+      "audioSrc": "./media/audio/great.mp3"
+   },
+   "good": {
+      "label": "good",
+      "imgSrc": "./media/img/good.png",
+      "audioSrc": "./media/audio/good.mp3"
+   },
+   "fine": {
+      "label": "fine",
+      "imgSrc": "./media/img/fine.png",
+      "audioSrc": "./media/audio/fine.mp3"
+   },
+   "soso": {
+      "label": "so-so",
+      "imgSrc": "./media/img/soso.png",
+      "audioSrc": "./media/audio/soso.mp3"
+   },
+   "notSoGood": {
+      "label": "not so good",
+      "imgSrc": "./media/img/notSoGood.png",
+      "audioSrc": "./media/audio/notSoGood.mp3"
+   },
    "january": {
       "label": "January",
       "imgSrc": "./media/img/january.svg",
@@ -263,5 +293,25 @@
       "label": "December",
       "imgSrc": "./media/img/december.svg",
       "audioSrc": "./media/audio/december.mp3"
+   },
+   "spring": {
+      "label": "spring",
+      "imgSrc": "./media/img/spring.png",
+      "audioSrc": "./media/audio/spring.mp3"
+   },
+   "summer": {
+      "label": "summer",
+      "imgSrc": "./media/img/summer.png",
+      "audioSrc": "./media/audio/summer.mp3"
+   },
+   "fall": {
+      "label": "fall",
+      "imgSrc": "./media/img/fall.png",
+      "audioSrc": "./media/audio/fall.mp3"
+   },
+   "winter": {
+      "label": "winter",
+      "imgSrc": "./media/img/winter.png",
+      "audioSrc": "./media/audio/winter.mp3"
    }
 }

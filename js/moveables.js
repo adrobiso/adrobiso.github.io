@@ -161,11 +161,14 @@
 
   function createMoveables(wordData, parentElement) {
     for (let word of Object.keys(wordData)) {
-      const moveable = createMoveable(word, wordData[word], parentElement);
-      moveable.labelElement.style.display = answerOptions.showsLabel ? '' : 'none';
-      moveable.audioIndicator.style.display = answerOptions.playsAudio ? '' : 'none';
-      moveable.baseElement.onclick = answerOptions.playsAudio ? handlePlayMoveableAudio : null;
-      ui.moveables.set(word, moveable);
+      const data = wordData[word];
+      if (data) {
+        const moveable = createMoveable(word, data, parentElement);
+        moveable.labelElement.style.display = answerOptions.showsLabel ? '' : 'none';
+        moveable.audioIndicator.style.display = answerOptions.playsAudio ? '' : 'none';
+        moveable.baseElement.onclick = answerOptions.playsAudio ? handlePlayMoveableAudio : null;
+        ui.moveables.set(word, moveable);
+      }
     }
   }
 
