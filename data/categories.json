@@ -94,5 +94,20 @@
          "fall",
          "winter"
       ]
+   },
+   "subjects": {
+      "iconSrc": "./media/img/subjects.png",
+      "words": [
+         "math",
+         "science",
+         "english",
+         "japanese",
+         "socialStudies",
+         "homeEconomics",
+         "calligraphy",
+         "music",
+         "pe",
+         "moralEducation"
+      ]
    }
 }

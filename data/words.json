@@ -313,5 +313,60 @@
       "label": "winter",
       "imgSrc": "./media/img/winter.png",
       "audioSrc": "./media/audio/winter.mp3"
+   },
+   "math": {
+      "label": "math",
+      "imgSrc": "./media/img/math.png",
+      "audioSrc": "./media/audio/math.mp3"
+   },
+   "science": {
+      "label": "science",
+      "imgSrc": "./media/img/science.png",
+      "audioSrc": "./media/audio/science.mp3"
+   },
+   "english": {
+      "label": "english",
+      "imgSrc": "./media/img/english.png",
+      "audioSrc": "./media/audio/english.mp3"
+   },
+   "japanese": {
+      "label": "japanese",
+      "imgSrc": "./media/img/japanese.png",
+      "audioSrc": "./media/audio/japanese.mp3"
+   },
+   "socialStudies": {
+      "label": "social studies",
+      "imgSrc": "./media/img/socialStudies.png",
+      "audioSrc": "./media/audio/socialStudies.mp3"
+   },
+   "artsAndCrafts": {
+      "label": "arts and crafts",
+      "imgSrc": "./media/img/artsAndCrafts.png",
+      "audioSrc": "./media/audio/artsAndCrafts.mp3"
+   },
+   "homeEconomics": {
+      "label": "home economics",
+      "imgSrc": "./media/img/homeEconomics.png",
+      "audioSrc": "./media/audio/homeEconomics.mp3"
+   },
+   "moralEducation": {
+      "label": "moral education",
+      "imgSrc": "./media/img/moralEducation.png",
+      "audioSrc": "./media/audio/moralEducation.mp3"
+   },
+   "pe": {
+      "label": "P.E.",
+      "imgSrc": "./media/img/pe.png",
+      "audioSrc": "./media/audio/pe.mp3"
+   },
+   "calligraphy": {
+      "label": "calligraphy",
+      "imgSrc": "./media/img/calligraphy.png",
+      "audioSrc": "./media/audio/calligraphy.mp3"
+   },
+   "music": {
+      "label": "music",
+      "imgSrc": "./media/img/music.png",
+      "audioSrc": "./media/audio/music.mp3"
    }
 }
