@@ -325,12 +325,12 @@
       "audioSrc": "./media/audio/science.mp3"
    },
    "english": {
-      "label": "english",
+      "label": "English",
       "imgSrc": "./media/img/english.png",
       "audioSrc": "./media/audio/english.mp3"
    },
    "japanese": {
-      "label": "japanese",
+      "label": "Japanese",
       "imgSrc": "./media/img/japanese.png",
       "audioSrc": "./media/audio/japanese.mp3"
    },
