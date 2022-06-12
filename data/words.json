@@ -368,5 +368,100 @@
       "label": "music",
       "imgSrc": "./media/img/music.png",
       "audioSrc": "./media/audio/music.mp3"
+   },
+   "amusementPark": {
+      "label": "amusement park",
+      "imgSrc": "./media/img/amusementPark.png",
+      "audioSrc": "./media/audio/amusementPark.mp3"
+   },
+   "aquarium": {
+      "label": "aquarium",
+      "imgSrc": "./media/img/aquarium.png",
+      "audioSrc": "./media/audio/aquarium.mp3"
+   },
+   "cakeShop": {
+      "label": "cake shop",
+      "imgSrc": "./media/img/cakeShop.png",
+      "audioSrc": "./media/audio/cakeShop.mp3"
+   },
+   "castle": {
+      "label": "castle",
+      "imgSrc": "./media/img/castle.png",
+      "audioSrc": "./media/audio/castle.mp3"
+   },
+   "convenienceStore": {
+      "label": "convenience store",
+      "imgSrc": "./media/img/convenienceStore.png",
+      "audioSrc": "./media/audio/convenienceStore.mp3"
+   },
+   "departmentStore": {
+      "label": "department store",
+      "imgSrc": "./media/img/departmentStore.png",
+      "audioSrc": "./media/audio/departmentStore.mp3"
+   },
+   "flowerShop": {
+      "label": "flower shop",
+      "imgSrc": "./media/img/flowerShop.png",
+      "audioSrc": "./media/audio/flowerShop.mp3"
+   },
+   "library": {
+      "label": "library",
+      "imgSrc": "./media/img/library.png",
+      "audioSrc": "./media/audio/library.mp3"
+   },
+   "mountain": {
+      "label": "mountain",
+      "imgSrc": "./media/img/mountain.png",
+      "audioSrc": "./media/audio/mountain.mp3"
+   },
+   "movieTheater": {
+      "label": "movie theater",
+      "imgSrc": "./media/img/movieTheater.png",
+      "audioSrc": "./media/audio/movieTheater.mp3"
+   },
+   "museum": {
+      "label": "museum",
+      "imgSrc": "./media/img/museum.png",
+      "audioSrc": "./media/audio/museum.mp3"
+   },
+   "park": {
+      "label": "park",
+      "imgSrc": "./media/img/park.png",
+      "audioSrc": "./media/audio/park.mp3"
+   },
+   "policeStation": {
+      "label": "police station",
+      "imgSrc": "./media/img/policeStation.png",
+      "audioSrc": "./media/audio/policeStation.mp3"
+   },
+   "postOffice": {
+      "label": "post office",
+      "imgSrc": "./media/img/postOffice.png",
+      "audioSrc": "./media/audio/postOffice.mp3"
+   },
+   "restaurant": {
+      "label": "restaurant",
+      "imgSrc": "./media/img/restaurant.png",
+      "audioSrc": "./media/audio/restaurant.mp3"
+   },
+   "river": {
+      "label": "river",
+      "imgSrc": "./media/img/river.png",
+      "audioSrc": "./media/audio/river.mp3"
+   },
+   "school": {
+      "label": "school",
+      "imgSrc": "./media/img/school.png",
+      "audioSrc": "./media/audio/school.mp3"
+   },
+   "sea": {
+      "label": "sea",
+      "imgSrc": "./media/img/sea.jpg",
+      "audioSrc": "./media/audio/sea.mp3"
+   },
+   "zoo": {
+      "label": "zoo",
+      "imgSrc": "./media/img/zoo.png",
+      "audioSrc": "./media/audio/zoo.mp3"
    }
 }

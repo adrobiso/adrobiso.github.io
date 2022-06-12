@@ -110,5 +110,34 @@
          "moralEducation",
          "artsAndCrafts"
       ]
+   },
+   "places1": {
+      "iconSrc": "./media/img/places1.png",
+      "words": [
+         "mountain",
+         "sea",
+         "river",
+         "park",
+         "zoo",
+         "school",
+         "library",
+         "restaurant",
+         "cakeShop",
+         "convenienceStore"
+      ]
+   },
+   "places2": {
+      "iconSrc": "./media/img/places2.png",
+      "words": [
+         "amusementPark",
+         "aquarium",
+         "castle",
+         "departmentStore",
+         "flowerShop",
+         "movieTheater",
+         "museum",
+         "policeStation",
+         "postOffice"
+      ]
    }
 }
