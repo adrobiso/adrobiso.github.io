@@ -159,6 +159,56 @@
       "imgSrc": "./media/img/ten.svg",
       "audioSrc": "./media/audio/ten.mp3"
    },
+   "eleven": {
+      "label": "eleven",
+      "imgSrc": "./media/img/eleven.svg",
+      "audioSrc": "./media/audio/eleven.mp3"
+   },
+   "twelve": {
+      "label": "twelve",
+      "imgSrc": "./media/img/twelve.svg",
+      "audioSrc": "./media/audio/twelve.mp3"
+   },
+   "thirteen": {
+      "label": "thirteen",
+      "imgSrc": "./media/img/thirteen.svg",
+      "audioSrc": "./media/audio/thirteen.mp3"
+   },
+   "fourteen": {
+      "label": "fourteen",
+      "imgSrc": "./media/img/fourteen.svg",
+      "audioSrc": "./media/audio/fourteen.mp3"
+   },
+   "fifteen": {
+      "label": "fifteen",
+      "imgSrc": "./media/img/fifteen.svg",
+      "audioSrc": "./media/audio/fifteen.mp3"
+   },
+   "sixteen": {
+      "label": "sixteen",
+      "imgSrc": "./media/img/sixteen.svg",
+      "audioSrc": "./media/audio/sixteen.mp3"
+   },
+   "seventeen": {
+      "label": "seventeen",
+      "imgSrc": "./media/img/seventeen.svg",
+      "audioSrc": "./media/audio/seventeen.mp3"
+   },
+   "eighteen": {
+      "label": "eighteen",
+      "imgSrc": "./media/img/eighteen.svg",
+      "audioSrc": "./media/audio/eighteen.mp3"
+   },
+   "nineteen": {
+      "label": "nineteen",
+      "imgSrc": "./media/img/nineteen.svg",
+      "audioSrc": "./media/audio/nineteen.mp3"
+   },
+   "twenty": {
+      "label": "twenty",
+      "imgSrc": "./media/img/twenty.svg",
+      "audioSrc": "./media/audio/twenty.mp3"
+   },
    "happy": {
       "label": "happy",
       "imgSrc": "./media/img/happy.png",

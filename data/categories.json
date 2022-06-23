@@ -29,8 +29,8 @@
          "germany"
       ]
    },
-   "numbers": {
-      "iconSrc": "./media/img/numbers.svg",
+   "numbers1to10": {
+      "iconSrc": "./media/img/numbers1to10.svg",
       "words": [
          "one",
          "two",
@@ -42,6 +42,21 @@
          "eight",
          "nine",
          "ten"
+      ]
+   },
+   "numbers11to20": {
+      "iconSrc": "./media/img/numbers11to20.svg",
+      "words": [
+         "eleven",
+         "twelve",
+         "thirteen",
+         "fourteen",
+         "fifteen",
+         "sixteen",
+         "seventeen",
+         "eighteen",
+         "nineteen",
+         "twenty"
       ]
    },
    "feelings": {
