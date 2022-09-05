@@ -1,19 +1,4 @@
 {
-   "colors": {
-      "iconSrc": "./media/img/Color_circle_(RGB).svg",
-      "words": [
-         "blue",
-         "red",
-         "grey",
-         "black",
-         "white",
-         "yellow",
-         "purple",
-         "green",
-         "orange",
-         "pink"
-      ]
-   },
    "countries": {
       "iconSrc": "./media/img/flags.png",
       "words": [
@@ -27,6 +12,31 @@
          "india",
          "china",
          "germany"
+      ]
+   },
+   "feelings": {
+      "iconSrc": "./media/img/feelings.png",
+      "words": [
+         "happy",
+         "sad",
+         "angry",
+         "hungry",
+         "thirsty",
+         "sleepy",
+         "tired",
+         "nervous",
+         "sick",
+         "hurt"
+      ]
+   },
+   "feelingLevels": {
+      "iconSrc": "./media/img/feelingLevels.png",
+      "words": [
+         "great",
+         "good",
+         "fine",
+         "soso",
+         "notSoGood"
       ]
    },
    "numbers1to10": {
@@ -59,29 +69,41 @@
          "twenty"
       ]
    },
-   "feelings": {
-      "iconSrc": "./media/img/feelings.png",
+   "colors": {
+      "iconSrc": "./media/img/Color_circle_(RGB).svg",
       "words": [
-         "happy",
-         "sad",
-         "angry",
-         "hungry",
-         "thirsty",
-         "sleepy",
-         "tired",
-         "nervous",
-         "sick",
-         "hurt"
+         "blue",
+         "red",
+         "grey",
+         "black",
+         "white",
+         "yellow",
+         "purple",
+         "green",
+         "orange",
+         "pink"
       ]
    },
-   "feelingLevels": {
-      "iconSrc": "./media/img/feelingLevels.png",
+   "firstSixMonths": {
+      "iconSrc": "./media/img/firstSixMonths.svg",
       "words": [
-         "great",
-         "good",
-         "fine",
-         "soso",
-         "notSoGood"
+         "january",
+         "february",
+         "march",
+         "april",
+         "may",
+         "june"
+      ]
+   },
+   "lastSixMonths": {
+      "iconSrc": "./media/img/lastSixMonths.svg",
+      "words": [
+         "july",
+         "august",
+         "september",
+         "october",
+         "november",
+         "december"
       ]
    },
    "months": {
