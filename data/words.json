@@ -513,5 +513,40 @@
       "label": "zoo",
       "imgSrc": "./media/img/zoo.png",
       "audioSrc": "./media/audio/zoo.mp3"
+   },
+   "square": {
+      "label": "square",
+      "imgSrc": "./media/img/square.svg",
+      "audioSrc": "./media/audio/square.mp3"
+   },
+   "circle": {
+      "label": "circle",
+      "imgSrc": "./media/img/circle.svg",
+      "audioSrc": "./media/audio/circle.mp3"
+   },
+   "rectangle": {
+      "label": "rectangle",
+      "imgSrc": "./media/img/rectangle.svg",
+      "audioSrc": "./media/audio/rectangle.mp3"
+   },
+   "triangle": {
+      "label": "triangle",
+      "imgSrc": "./media/img/triangle.svg",
+      "audioSrc": "./media/audio/triangle.mp3"
+   },
+   "heart": {
+      "label": "heart",
+      "imgSrc": "./media/img/heart.svg",
+      "audioSrc": "./media/audio/heart.mp3"
+   },
+   "star": {
+      "label": "star",
+      "imgSrc": "./media/img/star.svg",
+      "audioSrc": "./media/audio/star.mp3"
+   },
+   "diamond": {
+      "label": "diamond",
+      "imgSrc": "./media/img/diamond.svg",
+      "audioSrc": "./media/audio/diamond.mp3"
    }
 }

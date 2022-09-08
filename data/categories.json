@@ -84,6 +84,18 @@
          "pink"
       ]
    },
+   "shapes": {
+      "iconSrc": "./media/img/shapes.svg",
+      "words": [
+         "square",
+         "circle",
+         "rectangle",
+         "triangle",
+         "heart",
+         "star",
+         "diamond"
+      ]
+   },
    "firstSixMonths": {
       "iconSrc": "./media/img/firstSixMonths.svg",
       "words": [
