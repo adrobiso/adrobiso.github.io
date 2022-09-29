@@ -84,6 +84,48 @@
          "pink"
       ]
    },
+   "sports": {
+      "iconSrc": "./media/img/sports.png",
+      "words": [
+         "soccer",
+         "baseball",
+         "basketball",
+         "dodgeball",
+         "swimming",
+         "tennis",
+         "tableTennis",
+         "volleyball"
+      ]
+   },
+   "food1": {
+      "iconSrc": "./media/img/food1.png",
+      "words": [
+         "iceCream",
+         "milk",
+         "pudding",
+         "onion",
+         "greenPepper",
+         "strawberry",
+         "carrot",
+         "cucumber",
+         "orangeJuice"
+      ]
+   },
+   "food2": {
+      "iconSrc": "./media/img/food2.png",
+      "words": [
+         "apple",
+         "orangeFood",
+         "grapes",
+         "kiwi",
+         "lemon",
+         "noodles",
+         "hamburger",
+         "egg",
+         "pizza",
+         "jam"
+      ]
+   },
    "shapes": {
       "iconSrc": "./media/img/shapes.svg",
       "words": [

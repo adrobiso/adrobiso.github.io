@@ -548,5 +548,140 @@
       "label": "diamond",
       "imgSrc": "./media/img/diamond.svg",
       "audioSrc": "./media/audio/diamond.mp3"
+   },
+   "soccer": {
+      "label": "soccer",
+      "imgSrc": "./media/img/soccer.png",
+      "audioSrc": "./media/audio/soccer.mp3"
+   },
+   "baseball": {
+      "label": "baseball",
+      "imgSrc": "./media/img/baseball.png",
+      "audioSrc": "./media/audio/baseball.mp3"
+   },
+   "basketball": {
+      "label": "basketball",
+      "imgSrc": "./media/img/basketball.png",
+      "audioSrc": "./media/audio/basketball.mp3"
+   },
+   "dodgeball": {
+      "label": "dodgeball",
+      "imgSrc": "./media/img/dodgeball.png",
+      "audioSrc": "./media/audio/dodgeball.mp3"
+   },
+   "swimming": {
+      "label": "swimming",
+      "imgSrc": "./media/img/swimming.png",
+      "audioSrc": "./media/audio/swimming.mp3"
+   },
+   "tennis": {
+      "label": "tennis",
+      "imgSrc": "./media/img/tennis.png",
+      "audioSrc": "./media/audio/tennis.mp3"
+   },
+   "tableTennis": {
+      "label": "table tennis",
+      "imgSrc": "./media/img/tableTennis.png",
+      "audioSrc": "./media/audio/tableTennis.mp3"
+   },
+   "volleyball": {
+      "label": "volleyball",
+      "imgSrc": "./media/img/volleyball.png",
+      "audioSrc": "./media/audio/volleyball.mp3"
+   },
+   "iceCream": {
+      "label": "ice cream",
+      "imgSrc": "./media/img/iceCream.png",
+      "audioSrc": "./media/audio/iceCream.mp3"
+   },
+   "milk": {
+      "label": "milk",
+      "imgSrc": "./media/img/milk.png",
+      "audioSrc": "./media/audio/milk.mp3"
+   },
+   "pudding": {
+      "label": "pudding",
+      "imgSrc": "./media/img/pudding.png",
+      "audioSrc": "./media/audio/pudding.mp3"
+   },
+   "onion": {
+      "label": "onion",
+      "imgSrc": "./media/img/onion.png",
+      "audioSrc": "./media/audio/onion.mp3"
+   },
+   "greenPepper": {
+      "label": "green pepper",
+      "imgSrc": "./media/img/greenPepper.png",
+      "audioSrc": "./media/audio/greenPepper.mp3"
+   },
+   "strawberry": {
+      "label": "strawberry",
+      "imgSrc": "./media/img/strawberry.png",
+      "audioSrc": "./media/audio/strawberry.mp3"
+   },
+   "carrot": {
+      "label": "carrot",
+      "imgSrc": "./media/img/carrot.png",
+      "audioSrc": "./media/audio/carrot.mp3"
+   },
+   "cucumber": {
+      "label": "cucumber",
+      "imgSrc": "./media/img/cucumber.png",
+      "audioSrc": "./media/audio/cucumber.mp3"
+   },
+   "orangeJuice": {
+      "label": "orange juice",
+      "imgSrc": "./media/img/orangeJuice.png",
+      "audioSrc": "./media/audio/orangeJuice.mp3"
+   },
+   "apple": {
+      "label": "apple",
+      "imgSrc": "./media/img/apple.png",
+      "audioSrc": "./media/audio/apple.mp3"
+   },
+   "orangeFood": {
+      "label": "orange",
+      "imgSrc": "./media/img/orangeFood.png",
+      "audioSrc": "./media/audio/orange.mp3"
+   },
+   "grapes": {
+      "label": "grapes",
+      "imgSrc": "./media/img/grapes.png",
+      "audioSrc": "./media/audio/grapes.mp3"
+   },
+   "lemon": {
+      "label": "lemon",
+      "imgSrc": "./media/img/lemon.png",
+      "audioSrc": "./media/audio/lemon.mp3"
+   },
+   "kiwi": {
+      "label": "kiwi",
+      "imgSrc": "./media/img/kiwi.png",
+      "audioSrc": "./media/audio/kiwi.mp3"
+   },
+   "noodles": {
+      "label": "noodles",
+      "imgSrc": "./media/img/noodles.png",
+      "audioSrc": "./media/audio/noodles.mp3"
+   },
+   "hamburger": {
+      "label": "hamburger",
+      "imgSrc": "./media/img/hamburger.png",
+      "audioSrc": "./media/audio/hamburger.mp3"
+   },
+   "egg": {
+      "label": "egg",
+      "imgSrc": "./media/img/egg.png",
+      "audioSrc": "./media/audio/egg.mp3"
+   },
+   "pizza": {
+      "label": "pizza",
+      "imgSrc": "./media/img/pizza.png",
+      "audioSrc": "./media/audio/pizza.mp3"
+   },
+   "jam": {
+      "label": "jam",
+      "imgSrc": "./media/img/jam.png",
+      "audioSrc": "./media/audio/jam.mp3"
    }
 }
