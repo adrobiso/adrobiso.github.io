@@ -201,6 +201,16 @@
          "moralEducation",
          "artsAndCrafts"
       ]
+   },"questionWords": {
+      "iconSrc": "./media/img/questionWords.png",
+      "words": [
+         "who",
+         "what",
+         "when",
+         "where",
+         "why",
+         "how"
+      ]
    },
    "places1": {
       "iconSrc": "./media/img/places1.png",

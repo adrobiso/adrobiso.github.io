@@ -683,5 +683,35 @@
       "label": "jam",
       "imgSrc": "./media/img/jam.png",
       "audioSrc": "./media/audio/jam.mp3"
+   },
+   "who": {
+      "label": "who",
+      "imgSrc": "./media/img/who.svg",
+      "audioSrc": "./media/audio/who.mp3"
+   },
+   "what": {
+      "label": "what",
+      "imgSrc": "./media/img/what.png",
+      "audioSrc": "./media/audio/what.mp3"
+   },
+   "when": {
+      "label": "when",
+      "imgSrc": "./media/img/when.png",
+      "audioSrc": "./media/audio/when.mp3"
+   },
+   "where": {
+      "label": "where",
+      "imgSrc": "./media/img/where.png",
+      "audioSrc": "./media/audio/where.mp3"
+   },
+   "why": {
+      "label": "why",
+      "imgSrc": "./media/img/why.svg",
+      "audioSrc": "./media/audio/why.mp3"
+   },
+   "how": {
+      "label": "how",
+      "imgSrc": "./media/img/how.png",
+      "audioSrc": "./media/audio/how.mp3"
    }
 }
