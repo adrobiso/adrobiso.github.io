@@ -362,6 +362,7 @@
     if (currentQuestion.answer) {
       setNewQuestion();
     }
+    questionOrder.forEach((question) => delete question.wasCorrect);
     ui.scoreLabel.style.color = "white";
     correctAnswers.length = 0;
     updateScoreText();
