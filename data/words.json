@@ -713,5 +713,65 @@
       "label": "how",
       "imgSrc": "./media/img/how.png",
       "audioSrc": "./media/audio/how.mp3"
+   },
+   "graduationCeremony": {
+      "label": "graduation ceremony",
+      "imgSrc": "./media/img/graduationCeremony.png",
+      "audioSrc": "./media/audio/graduationCeremony.mp3"
+   },
+   "entranceCeremony": {
+      "label": "entrance ceremony",
+      "imgSrc": "./media/img/entranceCeremony.png",
+      "audioSrc": "./media/audio/entranceCeremony.mp3"
+   },
+   "fieldTrip": {
+      "label": "field trip",
+      "imgSrc": "./media/img/fieldTrip.png",
+      "audioSrc": "./media/audio/fieldTrip.mp3"
+   },
+   "schoolTrip": {
+      "label": "school trip",
+      "imgSrc": "./media/img/schoolTrip.png",
+      "audioSrc": "./media/audio/schoolTrip.mp3"
+   },
+   "sportsDay": {
+      "label": "sports day",
+      "imgSrc": "./media/img/sportsDay.png",
+      "audioSrc": "./media/audio/sportsDay.mp3"
+   },
+   "marathon": {
+      "label": "marathon",
+      "imgSrc": "./media/img/marathon.png",
+      "audioSrc": "./media/audio/marathon.mp3"
+   },
+   "swimmingMeet": {
+      "label": "swimming meet",
+      "imgSrc": "./media/img/swimmingMeet.png",
+      "audioSrc": "./media/audio/swimmingMeet.mp3"
+   },
+   "chorusContest": {
+      "label": "chorus contest",
+      "imgSrc": "./media/img/chorusContest.png",
+      "audioSrc": "./media/audio/chorusContest.mp3"
+   },
+   "schoolPlay": {
+      "label": "school play",
+      "imgSrc": "./media/img/schoolPlay.png",
+      "audioSrc": "./media/audio/schoolPlay.mp3"
+   },
+   "musicFestival": {
+      "label": "music festival",
+      "imgSrc": "./media/img/musicFestival.png",
+      "audioSrc": "./media/audio/musicFestival.mp3"
+   },
+   "cultureFestival": {
+      "label": "culture festival",
+      "imgSrc": "./media/img/cultureFestival.png",
+      "audioSrc": "./media/audio/cultureFestival.mp3"
+   },
+   "volunteerDay": {
+      "label": "volunteer day",
+      "imgSrc": "./media/img/volunteerDay.png",
+      "audioSrc": "./media/audio/volunteerDay.mp3"
    }
 }

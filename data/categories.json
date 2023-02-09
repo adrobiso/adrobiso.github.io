@@ -240,5 +240,22 @@
          "policeStation",
          "postOffice"
       ]
+   },
+   "schoolEvents": {
+      "iconSrc": "./media/img/schoolEvents.png",
+      "words": [
+         "graduationCeremony",
+         "entranceCeremony",
+         "fieldTrip",
+         "schoolTrip",
+         "sportsDay",
+         "schoolPlay",
+         "swimmingMeet",
+         "marathon",
+         "musicFestival",
+         "chorusContest",
+         "cultureFestival",
+         "volunteerDay"
+      ]
    }
 }
